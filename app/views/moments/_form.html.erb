@@ -1,0 +1,47 @@
+<%= form_with(model: moment, local: true) do |form| %>
+  <% if moment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(moment.errors.count, "error") %> prohibited this moment from being saved:</h2>
+
+      <ul>
+        <% moment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :to_name %>
+    <%= form.text_field :to_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :from_name %>
+    <%= form.text_field :from_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :audio_url %>
+    <%= form.text_field :audio_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

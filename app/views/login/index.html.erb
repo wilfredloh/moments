@@ -1,10 +1,28 @@
 
 <% if user_signed_in? %>
   <%= link_to 'log out', destroy_user_session_url, method: :delete %>
-  <h1>YOU HAVE LOGGED IN</h1>
+  <h1>MAIN PAGE SHOWING ALL THEMES</h1>
   <p>Current User Id </p>
   <%= current_user.id %>
   <%= current_user.email %>
+  <h2>Choose your theme: </h2>
+  <p>Get design inspiration from:<a href="https://www.canva.com">Canva</a></p>
+
+  <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
+
+    <p>
+      <%= form.submit "Create Birthday" %>
+    </p>
+  <% end %>
+
+  <%
+=begin%>
+ <h3><%=link_to 'Birthday', new_moment_path %></h3> 
+<%
+=end%>
+
+  <h3>Graduation</h3>
+  <h3>Farewell</h3>
 <% else %>
   <h1>This is the landing page before login</h1>
   <%= link_to 'Log in', new_user_session_url %>
