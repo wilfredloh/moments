@@ -1,0 +1,14 @@
+
+<% if user_signed_in? %>
+  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
+  <h1>YOU HAVE LOGGED IN</h1>
+  <p>Current User Id </p>
+  <%= current_user.id %>
+  <%= current_user.email %>
+<% else %>
+  <h1>This is the landing page before login</h1>
+  <%= link_to 'Log in', new_user_session_url %>
+  <%= link_to('Register', new_user_registration_path) %>
+<% end %>
+
+
