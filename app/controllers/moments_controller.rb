@@ -21,6 +21,7 @@ class MomentsController < ApplicationController
 
   # GET /moments/1/edit
   def edit
+    @moment = set_moment
   end
 
   # POST /moments
@@ -41,15 +42,17 @@ class MomentsController < ApplicationController
   # PATCH/PUT /moments/1
   # PATCH/PUT /moments/1.json
   def update
-    respond_to do |format|
+    # respond_to do |format|
       if @moment.update(moment_params)
-        format.html { redirect_to @moment, notice: 'Moment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @moment }
+        # format.html { redirect_to @moment, notice: 'Moment was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @moment }
+        render :json => @moment, status: :ok
       else
-        format.html { render :edit }
-        format.json { render json: @moment.errors, status: :unprocessable_entity }
+        # format.html { render :edit }
+        # format.json { render json: @moment.errors, status: :unprocessable_entity }
+        render :json => @moment.errors, status: :unprocessable_entity
       end
-    end
+    # end
   end
 
   # DELETE /moments/1

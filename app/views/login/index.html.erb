@@ -15,14 +15,11 @@
     </p>
   <% end %>
 
-  <%
-=begin%>
- <h3><%=link_to 'Birthday', new_moment_path %></h3> 
-<%
-=end%>
-
   <h3>Graduation</h3>
   <h3>Farewell</h3>
+
+  <h2><%= link_to 'All Moments', moments_path %></h2>
+
 <% else %>
   <h1>This is the landing page before login</h1>
   <%= link_to 'Log in', new_user_session_url %>
