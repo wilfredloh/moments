@@ -12,6 +12,27 @@ class MomentsController < ApplicationController
   # GET /moments/1
   # GET /moments/1.json
   def show
+    moment = set_moment
+  end
+
+  # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  # AJAX the links in edit page, so that I don't need to generate a new page
+  # a href [moments] <%=moment.hash/> (when i create the file)
+  #hassssshhhhh itttt first and store it in the database
+
+
+  # def show
+  #   #Moment.find (dont do this)
+  #   moment = Moment.where(hash:params[:hash])
+  # end
+
+  # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+  def generate
+    
   end
 
   # GET /moments/new
@@ -22,6 +43,8 @@ class MomentsController < ApplicationController
   # GET /moments/1/edit
   def edit
     @moment = set_moment
+    render layout: "sidebar"
+
   end
 
   # POST /moments

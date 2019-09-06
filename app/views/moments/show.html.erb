@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h2>Link to card: http://localhost:3000/moments</h2>
+<h2>Code here: </h2>
+<h2>Sharing links here</h2>
+<img src="https://cdn2.iconfinder.com/data/iconsets/previews/medium/2018-social-media-logotypes.png"/>
+
+<%
+=begin%>
+ <p>
   <strong>Title:</strong>
   <%= @moment.title %>
 </p>
@@ -28,7 +35,10 @@
 <p>
   <strong>Audio url:</strong>
   <%= @moment.audio_url %>
-</p>
+</p> 
+<%
+=end%>
 
+<br/>
 <%= link_to 'Edit', edit_moment_path(@moment) %> |
 <%= link_to 'Back', moments_path %>

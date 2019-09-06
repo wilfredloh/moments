@@ -15,6 +15,8 @@
     </p>
   <% end %>
 
+  
+
   <h3>Graduation</h3>
   <h3>Farewell</h3>
 
@@ -22,6 +24,28 @@
 
 <% else %>
   <h1>This is the landing page before login</h1>
+
+  <div class="content">
+    <section id="home">
+	      <div class="home-content">
+        <a class="register-btn" data-toggle="modal" data-target="#registrationForm">Sign up</a>
+        <small class ="pl-3">Have an account? <u><a data-toggle="modal" data-target="#loginForm">Login</a></u></small>
+    </section>
+  </div>
+
+  <%
+=begin%>
+ <%= render "devise/sessions/new2" %> 
+<%
+=end%>
+
+
+
+ <%= render "devise/registrations/new" %>   
+
+
+
+
   <%= link_to 'Log in', new_user_session_url %>
   <%= link_to('Register', new_user_registration_path) %>
 <% end %>

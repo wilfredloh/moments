@@ -1,5 +1,7 @@
 import React from 'react'
 import { URL } from 'url';
+import styles from '../packs/hello_react.css';
+
 
 export default class App extends React.Component{
 
@@ -60,10 +62,21 @@ export default class App extends React.Component{
       return id;
     }
 
+    exportImage () {
+      console.log('exported!!!!')
+      print();
+    }
+    
+    getLinks () {
+      console.log('link out!!!!')
+    }
+
   render(){
 
     return(<div>
-      <h1>REACT</h1>
+
+      <div className="SCREEN_VIEW_CONTAINER">
+        <h1>REACT</h1>
 
         <input name="cal" type="date"/>
 
@@ -79,9 +92,9 @@ export default class App extends React.Component{
         <p>Image</p>
         <p>Audio</p>
         <button onClick={ ()=> {this.handleFormUpdate()}}>Save Changes</button>
-        <button onClick={ ()=> {this.checkId()}}>Check ID</button>
+        <button onClick={ ()=> {this.exportImage()}}>Export</button>
+        {/* <button onClick={ ()=> {this.getLinks()}}>Get Links</button> */}
 
-      <div>
         <p>Title</p>
         <h1>{this.state.title}</h1>
         <p>To Name</p>
@@ -94,6 +107,16 @@ export default class App extends React.Component{
         {/* <p>{this.state.from_name}</p> */}
         <p>Audio Url</p>
         {/* <p>{this.state.from_name}</p> */}
+      </div>
+
+      {/* ONLY ACTIVATE THIS WHEN PRINTING */}
+      <div id="PRINT_VIEW">
+        <p>Title</p>
+        <h1>{this.state.title}</h1>
+        <p>To Name</p>
+        <p>{this.state.to_name}</p>
+        <p>From Name</p>
+        <p>{this.state.from_name}</p>
       </div>
 
     </div>);
