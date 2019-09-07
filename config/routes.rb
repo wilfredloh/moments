@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :moments
 
-  get '/m/:hash' => 'moments#x' 
+  get '/m/:hash' => 'moments#card' 
 
   devise_for :users
   root 'login#index'

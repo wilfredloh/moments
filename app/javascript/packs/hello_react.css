@@ -23,4 +23,40 @@
 
 body {
     /* background: brown; */
+    margin: 0;
+}
+
+.reactContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.reactContainerMain {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.reactInput {
+    width: 20%;
+    background: #2a3039;
+    color: #dedfe0;
+    padding: 1rem;
+}
+
+.reactOutput {
+    width: 80%;
+    padding: 4rem;
+}
+
+.reactOutputInner {
+    border: 2px solid black;
+    height: 80vh;
+    background: lightgrey;
+}
+
+@media screen and (max-width: 992px){
+    .reactOutput{
+        background: red;
+    }
 }

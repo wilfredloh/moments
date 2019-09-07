@@ -1,15 +1,7 @@
 
-<div class="screenView">
-    <h1>This is a Moment</h1>
-    <%= link_to 'Show', @moment %> |
-    <%= link_to 'Back', moments_path %>
-</div>
-
 <%= content_tag :div,
     id: 'currentMoment',
     data: @moment.to_json do %>
 <% end %> 
-
-
 
 <%= javascript_pack_tag 'hello_react' %> 
