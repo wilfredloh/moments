@@ -1,36 +1,29 @@
 class MomentsController < ApplicationController
   before_action :set_moment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:x]
 
   require 'digest'
+
   # GET /moments
   # GET /moments.json
   def index
     @moments = Moment.all
+    
   end
 
   # GET /moments/1
   # GET /moments/1.json
   def show
-    moment = set_moment
-    # sha2 = Digest::SHA2.new
-    # p sha2  
-    # sha2.update "a"
-    # p sha2
-    # sha2.update "ab"
-    # p sha2
-    # sha2.update "a"
-    # p sha2
-
-    p 'test shaaaaaaaaaa@@@@@@@@@@'
-
-    Digest::SHA256.digest 'abc' 
-    sha256 = Digest::SHA256.new
-    p sha256
-
-    sha256.digest 'x'
-    p sha256
-
+    # @moment = hashed_moment
+  
+    # moment_id = moment.id.to_s
+    # p 'moment id'
+    # p moment_id
+    # Digest::SHA256.hexdigest 'message'
+    # sha256 = Digest::SHA256.new
+    # p sha256.hexdigest '9'
+    # p sha256.hexdigest '10'
+    # p sha256.hexdigest '11'
 
   end
 
@@ -50,7 +43,10 @@ class MomentsController < ApplicationController
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-  def generate
+  def x
+    @moment = hashed_moment
+    p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+    p @moment
     
   end
 
@@ -70,9 +66,25 @@ class MomentsController < ApplicationController
   # POST /moments.json
   def create
     @moment = Moment.new(title:"", to_name:"", from_name:"")
+    @moment.save
+
+    
+
     respond_to do |format|
       if @moment.save
-         format.html { redirect_to edit_moment_path(@moment), notice: 'Moment was successfully created.' }
+
+        moment_id = @moment.id.to_s
+        p 'moment id'
+        p moment_id
+        Digest::SHA256.hexdigest 'moment_id'
+        sha256 = Digest::SHA256.new
+        hashed_id = sha256.hexdigest moment_id
+        p 'hashed id'
+        p hashed_id
+        @moment.audio_url = hashed_id
+        @moment.save
+        
+        format.html { redirect_to edit_moment_path(@moment), notice: 'Moment was successfully created.' }
         format.json { render :show, status: :created, location: @moment }
       else
         format.html { render :new }
@@ -110,7 +122,20 @@ class MomentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_moment
+      p'PARMARMMSMDMMSDMSMDMD'
+      p params
       @moment = Moment.find(params[:id])
+
+      
+      # @moment = Moment.where(audio_url: params[:hash])[0]
+      # p @moment
+
+    end
+
+    def hashed_moment
+      # @moment = Moment.where(audio_url: params[:hash])[0]
+      @moment = Moment.where(audio_url: params[:hash])[0]
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
