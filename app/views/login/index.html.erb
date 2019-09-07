@@ -1,26 +1,30 @@
 
 <% if user_signed_in? %>
   <%= link_to 'log out', destroy_user_session_url, method: :delete %>
-  <h1>MAIN PAGE SHOWING ALL THEMES</h1>
   <p>Current User Id </p>
   <%= current_user.id %>
   <%= current_user.email %>
-  <h2>Choose your theme: </h2>
-  <p>Get design inspiration from:<a href="https://www.canva.com">Canva</a></p>
 
-  <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
+  <div>
+    <h2>Choose your theme: </h2>
+    <p>Get design inspiration from:<a href="https://www.canva.com">Canva</a></p>
+  </div>
 
-    <p>
-      <%= form.submit "Create Birthday" %>
-    </p>
-  <% end %>
+  <div class="createContainer">
+    <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
+      <%= form.submit "Birthday" %>
+    <% end %>
+    <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
+      <%= form.submit "Graduation" %>
+    <% end %>
+    <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
+      <%= form.submit "Farewell" %>
+    <% end %>
+  </div>
 
-  
-
-  <h3>Graduation</h3>
-  <h3>Farewell</h3>
-
-  <h2><%= link_to 'All Moments', moments_path %></h2>
+  <div class="momentsContainer">
+    <%= link_to 'All Moments', moments_path %>
+  </div>
 
 <% else %>
   <h1>This is the landing page before login</h1>

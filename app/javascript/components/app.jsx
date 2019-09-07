@@ -20,6 +20,11 @@ export default class App extends React.Component{
         id: null
       }
     }
+    componentDidMount() {
+      let url = window.location.href;
+      let id = url.split('/')[4];
+      this.setState({id: id});
+    }
     handleInputTitle (event) {
       let input = event.target.value;
       this.setState({title: input})
@@ -45,21 +50,17 @@ export default class App extends React.Component{
           }
         }
       };
-      let id = this.checkId();
+      // let id = this.checkId();
       var request = new XMLHttpRequest();
       request.addEventListener("load", responseHandler);
       
       let jsonObject = JSON.stringify(reactThis.state);
-      request.open("PATCH", `http://localhost:3000/moments/${id}`);
+      request.open("PATCH", `http://localhost:3000/moments/${this.state.id}`);
       request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       request.send(jsonObject);
     }
 
     checkId () {
-      let url = window.location.href;
-      let id = url.split('/')[4];
-      this.setState({id: id});
-      return id;
     }
 
     exportImage () {
@@ -72,7 +73,7 @@ export default class App extends React.Component{
     }
 
   render(){
-
+    let url = `http://localhost:3000/moments/${this.state.id}`;
     return(<div>
 
       <div className="SCREEN_VIEW_CONTAINER">
@@ -93,7 +94,20 @@ export default class App extends React.Component{
         <p>Audio</p>
         <button onClick={ ()=> {this.handleFormUpdate()}}>Save Changes</button>
         <button onClick={ ()=> {this.exportImage()}}>Export</button>
-        {/* <button onClick={ ()=> {this.getLinks()}}>Get Links</button> */}
+        <div className="dropdown">
+          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+          </button>
+          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a className="dropdown-item" href={url}>Link</a>
+            <a className="dropdown-item" href="#">QR code</a>
+            <a className="dropdown-item" href="#">Facebook</a>
+          </div>
+        </div>
+
+        {/* <button onClick={ ()=> {this.checkId()}}>Get Links</button> */}
+
+        
 
         <p>Title</p>
         <h1>{this.state.title}</h1>

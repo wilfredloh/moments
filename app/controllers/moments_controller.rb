@@ -2,7 +2,7 @@ class MomentsController < ApplicationController
   before_action :set_moment, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
-
+  require 'digest'
   # GET /moments
   # GET /moments.json
   def index
@@ -13,6 +13,25 @@ class MomentsController < ApplicationController
   # GET /moments/1.json
   def show
     moment = set_moment
+    # sha2 = Digest::SHA2.new
+    # p sha2  
+    # sha2.update "a"
+    # p sha2
+    # sha2.update "ab"
+    # p sha2
+    # sha2.update "a"
+    # p sha2
+
+    p 'test shaaaaaaaaaa@@@@@@@@@@'
+
+    Digest::SHA256.digest 'abc' 
+    sha256 = Digest::SHA256.new
+    p sha256
+
+    sha256.digest 'x'
+    p sha256
+
+
   end
 
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
