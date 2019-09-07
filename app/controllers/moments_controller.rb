@@ -58,14 +58,28 @@ class MomentsController < ApplicationController
   # GET /moments/1/edit
   def edit
     @moment = set_moment
-    render layout: "sidebar"
 
   end
 
   # POST /moments
   # POST /moments.json
   def create
-    @moment = Moment.new(title:"", to_name:"", from_name:"")
+
+    if params[:type] == 'birthday'
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+      p params[:type]
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+    elsif params[:type] == 'graduation'
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+      p params[:type]
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+    elsif params[:type] == 'farewell'
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+      p params[:type]
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+    end
+
+    @moment = Moment.new(title:"", to_name:"", from_name:"", image_url: params[:type])
     @moment.save
 
     

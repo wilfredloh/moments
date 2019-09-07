@@ -17,7 +17,8 @@ export default class App extends React.Component{
         to_name: parsedMoment.to_name,
         from_name: parsedMoment.from_name,
         description: "",
-        id: null
+        id: null,
+        type: parsedMoment.image_url
       }
     }
     componentDidMount() {
@@ -74,10 +75,16 @@ export default class App extends React.Component{
 
   render(){
     let url = `http://localhost:3000/moments/${this.state.id}`;
+
+    let x = ''
+    if (this.state.type === 'birthday') {
+      x = 'message is correct'
+    }
     return(<div>
 
       <div className="SCREEN_VIEW_CONTAINER">
         <h1>REACT</h1>
+        <p>{x}</p>
 
         <input name="cal" type="date"/>
 

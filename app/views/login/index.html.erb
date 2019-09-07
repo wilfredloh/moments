@@ -1,67 +1,99 @@
 
 <% if user_signed_in? %>
-  <%= link_to 'log out', destroy_user_session_url, method: :delete %>
-  <p>Current User Id </p>
-  <%= current_user.id %>
-  <%= current_user.email %>
 
-  <div>
-    <h2>Choose your theme: </h2>
-    <p>Get design inspiration from:<a href="https://www.canva.com">Canva</a></p>
+
+<!-- Page content holder -->
+<div class="page-content p-5" id="content">
+  <!-- Toggle button -->
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+
+  <!-- Demo content -->
+  <h2 class="display-4 text-white">Design Anything</h2>
+
+  <div class="row">
+    <div class="column" id="searchBar">
+      <input class="form-control homepage-searchbar" style="width:540px;" id="myInput" type="text" placeholder="Find a theme"/>
+    </div>
   </div>
+
+  <p class="lead text-white mb-0">Creativity is the natural order of life.</p>
+  
+  <div>
+    <h2>Create a design > </h2>
+  </div>
+
+  
 
   <div class="createContainer">
     <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
-      <%= form.submit "Birthday" %>
+      <input name="type" type="hidden" value="birthday" />
+      <%= form.submit "Begin", :type => :image, :src => "https://images-na.ssl-images-amazon.com/images/I/81HuZ7FzChL._SY500_.jpg", :formtarget => "_blank" %>
     <% end %>
     <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
-      <%= form.submit "Graduation" %>
+      <input name="type" type="hidden" value="graduation" />
+      <%= form.submit "Begin", :type => :image, :src => "https://cardthartic.com/wp-content/uploads/2018/01/1314_Outside.jpg", :formtarget => "_blank"%>
     <% end %>
     <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
-      <%= form.submit "Farewell" %>
+      <input name="type" type="hidden" value="farewell" />
+      <%= form.submit "Begin", :type => :image, :src => "https://rlv.zcache.com.au/funny_goodbye_card_rude_farewell_card_funny_card-r366cfdc64eb8438f9249b6ded4723fd1_em0cq_540.jpg", :formtarget => "_blank" %>
     <% end %>
   </div>
 
-  <div class="momentsContainer">
-    <h2><%= link_to 'All Moments', moments_path %></h2>
-  </div>
+  <a href="https://jsfiddle.net/bootstrapious/ko18ravd" target="_blank">For reference</a>
+  <div class="separator"></div>
+
+</div>
+<!-- End demo content -->
 
 
-
-
-
-
+  
 
 
 
 
 
 <% else %>
-  <h1>This is the landing page before login</h1>
 
-  <div class="content">
+
+
+  
+  <div class="content lp-top-cont">
     <section id="home">
 	      <div class="home-content">
+          <h3>Design anything.</h3>
+          <h3>Publish anywhere.</h3>
+        </div>
         <a class="register-btn" data-toggle="modal" data-target="#registrationForm">Sign up</a>
         <small class ="pl-3">Have an account? <u><a data-toggle="modal" data-target="#loginForm">Login</a></u></small>
     </section>
+    <aside>
+      <h1>This is the landing page before login</h1>
+      <img src="https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=40"/>
+    </aside>
   </div>
 
+  <div>
+    <h2>All Designs to choose from</h2>
+  </div>
   <%
 =begin%>
  <%= render "devise/sessions/new2" %> 
 <%
 =end%>
-
-
-
  <%= render "devise/registrations/new" %>   
 
 
 
 
-  <%= link_to 'Log in', new_user_session_url %>
-  <%= link_to('Register', new_user_registration_path) %>
+
+
+
+
+
+
 <% end %>
+
+
+
 
 
