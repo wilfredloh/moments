@@ -82,7 +82,7 @@ export default class App extends React.Component{
     }
     return(<div>
 
-      <div className="SCREEN_VIEW_CONTAINER">
+      <div className="screenView">
         <h1>REACT</h1>
         <p>{x}</p>
 
@@ -114,8 +114,6 @@ export default class App extends React.Component{
 
         {/* <button onClick={ ()=> {this.checkId()}}>Get Links</button> */}
 
-        
-
         <p>Title</p>
         <h1>{this.state.title}</h1>
         <p>To Name</p>
@@ -130,14 +128,18 @@ export default class App extends React.Component{
         {/* <p>{this.state.from_name}</p> */}
       </div>
 
+
+
+
       {/* ONLY ACTIVATE THIS WHEN PRINTING */}
-      <div id="PRINT_VIEW">
+      <div className="printView">
         <p>Title</p>
         <h1>{this.state.title}</h1>
         <p>To Name</p>
         <p>{this.state.to_name}</p>
         <p>From Name</p>
         <p>{this.state.from_name}</p>
+        <img src="https://res.cloudinary.com/teepublic/image/private/s--y1IE9Rzt--/t_Preview/b_rgb:ef4a81,c_limit,f_jpg,h_630,q_90,w_630/v1545274434/production/designs/3780530_0.jpg"/>
       </div>
 
     </div>);

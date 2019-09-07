@@ -1,4 +1,4 @@
-console.log("Loading script");
+console.log("script.js ready!");
 
 window.onload = () => {
 

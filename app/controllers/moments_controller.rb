@@ -8,7 +8,7 @@ class MomentsController < ApplicationController
   # GET /moments.json
   def index
     @moments = Moment.all
-    
+    render layout: "navbarHome"
   end
 
   # GET /moments/1
@@ -43,7 +43,7 @@ class MomentsController < ApplicationController
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-  def x
+  def card
     @moment = hashed_moment
     p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
     p @moment
