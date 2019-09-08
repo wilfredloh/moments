@@ -79,7 +79,6 @@ export default class App extends React.Component{
 
     return(<div className="reactContainer">
       
-
       <div className="reactContainerMain">
         <Input 
           moment={this.state.moment} 

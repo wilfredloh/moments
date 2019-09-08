@@ -4,7 +4,10 @@
   <div class="py-4 px-3 mb-4 bg-light">
     <div class="media d-flex align-items-center"><img src="https://ichef.bbci.co.uk/news/624/cpsprodpb/503C/production/_104304502_be53e1b5-279a-460d-963a-b70c8025926f.jpg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
       <div class="media-body">
-        <h4 class="m-0"><%= current_user.email %></h4>
+        <h4 class="m-0">
+          <%=current_user.email.split('@')[0].capitalize %>
+        </h4>
+        <br/>
         <p class="font-weight-light text-muted mb-0">Add pic here</p>
       </div>
     </div>
