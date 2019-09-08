@@ -1,6 +1,6 @@
 class MomentsController < ApplicationController
   before_action :set_moment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:x]
+  before_action :authenticate_user!, except: [:card]
 
   require 'digest'
 
@@ -8,7 +8,7 @@ class MomentsController < ApplicationController
   # GET /moments.json
   def index
     @moments = Moment.all
-    
+    render layout: "navbarHome"
   end
 
   # GET /moments/1
@@ -43,7 +43,7 @@ class MomentsController < ApplicationController
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-  def x
+  def card
     @moment = hashed_moment
     p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
     p @moment
@@ -58,14 +58,28 @@ class MomentsController < ApplicationController
   # GET /moments/1/edit
   def edit
     @moment = set_moment
-    render layout: "sidebar"
 
   end
 
   # POST /moments
   # POST /moments.json
   def create
-    @moment = Moment.new(title:"", to_name:"", from_name:"")
+
+    if params[:type] == 'birthday'
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+      p params[:type]
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+    elsif params[:type] == 'graduation'
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+      p params[:type]
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+    elsif params[:type] == 'farewell'
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+      p params[:type]
+      p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
+    end
+
+    @moment = Moment.new(title:"", to_name:"", from_name:"", image_url: params[:type])
     @moment.save
 
     

@@ -1,3 +1,99 @@
+/* ################################################################ */
+/* CSS for the things we want to print (print view) */
+@media only screen {
+    .printView{
+        display: none;
+    }
+}
+
+/* CSS for the things we DO NOT want to print (web view) */
+@media print {
+    body {
+        margin: 0;
+        color: #000;
+        background: green; 
+    } 
+    .screenView{
+        display: none; 
+    }
+}
+/* ################################################################ */
+
+/* ALL CSS GOES BELOW */
+
 body {
-    background-color: red;
+    /* background: brown; */
+    margin: 0;
+}
+
+.reactContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.reactContainerMain {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.reactInput {
+    width: 200px;
+    background: #2a3039;
+    color: #dedfe0;
+    padding: 1rem;
+}
+
+.reactOutput {
+    margin-top: 2rem;
+    width: 80%;
+    /* padding: 4rem; */
+    height: 80vh;
+    padding: 5%;
+    /* max-width: 1000px; */
+}
+
+.reactOutputInner {
+    border: 2px solid black;
+    /* height: 80vh; */
+    /* height: 50%; */
+    height: 42vw;
+    max-width: 1000px;
+    width: 60vw;
+    background: lightgrey;
+    margin: 0 auto;
+}
+
+.reactOutputInner p {
+    font-size: 2vw;
+}
+
+@media screen and (max-width: 992px){
+    .reactOutput{
+        /* background: red; */
+    }
+}
+
+@media screen and (max-width: 768px){
+    .reactContainerMain {
+        display: flex;
+        flex-flow: column;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+    .reactInput{
+        width: 100vw;
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .reactInput h1, p {
+        /* font-size: 10px; */
+    }
+    .reactOutput{
+        /* background: green; */
+        margin: 0 auto;
+        padding: 0;
+        height: 65vh;
+    }
 }

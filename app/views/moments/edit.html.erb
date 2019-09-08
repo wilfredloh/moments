@@ -1,35 +1,7 @@
 
-<div class="SCREEN_VIEW_CONTAINER">
-    <h1>This is a Moment</h1>
-    <%= link_to 'Show', @moment %> |
-    <%= link_to 'Back', moments_path %>
-</div>
-
 <%= content_tag :div,
     id: 'currentMoment',
     data: @moment.to_json do %>
 <% end %> 
-
-<!-- CSS for the things we want to print (print view) -->
-<style type="text/css" media="print">
-
-.SCREEN_VIEW_CONTAINER{
-        display: none;
-    }
-.other_print_layout{
-        background-color:#FFF;
-    }
-</style>
-
-<!-- CSS for the things we DO NOT want to print (web view) -->
-<style type="text/css" media="screen">
-
-   #PRINT_VIEW{
-      display: none;
-   }
-.other_web_layout{
-        background-color:#E0E0E0;
-    }
-</style>
 
 <%= javascript_pack_tag 'hello_react' %> 

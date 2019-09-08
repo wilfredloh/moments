@@ -1,23 +1,26 @@
 import React from 'react'
 import { URL } from 'url';
 import styles from '../packs/hello_react.css';
+import Input from './input/input'
+import Output from './output/output'
+import Print from './print/print'
 
 
 export default class App extends React.Component{
-
     constructor() {
       super()
-
       // passing in Ruby variables (moment)
       let moment = document.getElementById('currentMoment');
       let parsedMoment = JSON.parse(moment.getAttribute('data'));
  
       this.state = {
+        moment: parsedMoment,
         title: parsedMoment.title,
         to_name: parsedMoment.to_name,
         from_name: parsedMoment.from_name,
         description: "",
-        id: null
+        id: null,
+        type: parsedMoment.image_url
       }
     }
     componentDidMount() {
@@ -25,19 +28,20 @@ export default class App extends React.Component{
       let id = url.split('/')[4];
       this.setState({id: id});
     }
-    handleInputTitle (event) {
+
+    // INPUT COMPONENT FUNCTIONS
+    handleInputTitle = (event) => {
       let input = event.target.value;
       this.setState({title: input})
     }
-    handleInputToName (event) {
+    handleInputToName = (event) => {
       let input = event.target.value;
       this.setState({to_name: input})
     }
-    handleInputFromName (event) {
+    handleInputFromName = (event) => {
       let input = event.target.value;
       this.setState({from_name: input})
     }
-    
     handleFormUpdate = () => {
       var reactThis = this;
       var responseHandler = () => {
@@ -50,88 +54,56 @@ export default class App extends React.Component{
           }
         }
       };
-      // let id = this.checkId();
       var request = new XMLHttpRequest();
       request.addEventListener("load", responseHandler);
-      
       let jsonObject = JSON.stringify(reactThis.state);
       request.open("PATCH", `http://localhost:3000/moments/${this.state.id}`);
       request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       request.send(jsonObject);
     }
-
-    checkId () {
-    }
-
-    exportImage () {
+    exportImage = () => {
       console.log('exported!!!!')
       print();
     }
-    
-    getLinks () {
+    getLinks = () => {
       console.log('link out!!!!')
     }
 
+  // RENDER BELOW
   render(){
     let url = `http://localhost:3000/moments/${this.state.id}`;
-    return(<div>
+    let x = ''
+    if (this.state.type === 'birthday') {
+      x = 'this is a birthday!'
+    }
 
-      <div className="SCREEN_VIEW_CONTAINER">
-        <h1>REACT</h1>
+    return(<div className="reactContainer">
+      
 
-        <input name="cal" type="date"/>
+      <div className="reactContainerMain">
+        <Input 
+          moment={this.state.moment} 
+          url={url}
+          onTitleChange={this.handleInputTitle}
+          onToNameChange={this.handleInputToName}
+          onFromNameChange={this.handleInputFromName}
+          onFormSave={this.handleFormUpdate}
+          onExport={this.exportImage}
+        />
 
-        <p>Title</p>
-        <input onChange={(event)=>{this.handleInputTitle(event);}} defaultValue={this.state.title}/>
-        <p>To Name</p>
-        <input onChange={(event)=>{this.handleInputToName(event);}} defaultValue={this.state.to_name}/>
-        <p>From Name</p>
-        <input onChange={(event)=>{this.handleInputFromName(event);}} defaultValue={this.state.from_name}/>
-        <p>Description</p>
-        <input onChange={(event)=>{this.handleInputFromName(event);}}/>
-        <p>Add attachments</p>
-        <p>Image</p>
-        <p>Audio</p>
-        <button onClick={ ()=> {this.handleFormUpdate()}}>Save Changes</button>
-        <button onClick={ ()=> {this.exportImage()}}>Export</button>
-        <div className="dropdown">
-          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-          </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href={url}>Link</a>
-            <a className="dropdown-item" href="#">QR code</a>
-            <a className="dropdown-item" href="#">Facebook</a>
-          </div>
-        </div>
-
-        {/* <button onClick={ ()=> {this.checkId()}}>Get Links</button> */}
-
-        
-
-        <p>Title</p>
-        <h1>{this.state.title}</h1>
-        <p>To Name</p>
-        <p>{this.state.to_name}</p>
-        <p>From Name</p>
-        <p>{this.state.from_name}</p>
-        <p>Description</p>
-        {/* <p>{this.state.description}</p> */}
-        <p>Image url</p>
-        {/* <p>{this.state.from_name}</p> */}
-        <p>Audio Url</p>
-        {/* <p>{this.state.from_name}</p> */}
+        <Output 
+          values={this.state}
+        />
+      </div>
+      
+      <div className="reactContainerPrint">
+        {x}
+        <Print 
+          values={this.state}
+        />
       </div>
 
-      {/* ONLY ACTIVATE THIS WHEN PRINTING */}
-      <div id="PRINT_VIEW">
-        <p>Title</p>
-        <h1>{this.state.title}</h1>
-        <p>To Name</p>
-        <p>{this.state.to_name}</p>
-        <p>From Name</p>
-        <p>{this.state.from_name}</p>
-      </div>
+      {/* <button onClick={ ()=> {this.checkId()}}>Get Links</button> */}
 
     </div>);
   }
