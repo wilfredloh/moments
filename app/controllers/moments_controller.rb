@@ -47,7 +47,8 @@ class MomentsController < ApplicationController
     @moment = hashed_moment
     p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
     p @moment
-    
+
+    render layout: "card"
   end
 
   # GET /moments/new

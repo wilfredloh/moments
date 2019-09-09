@@ -12,23 +12,27 @@ export default class Output extends React.Component{
     return (
         <div className="screenView reactOutput">
             <div className="reactOutputInner">
-                <div>
-                    <p>Title</p>
+                {/* <div>
                     <h1>{title}</h1>
+                </div> */}
+                <div className="outputTo">
+                    <p>Dear {to_name},</p>
+                </div>
+                <div className="outputMessage">
+                    <h2>Have a happy birthday!</h2>
                 </div>
                 <div>
-                    <p>To Name</p>
-                    <h2>{to_name}</h2>
+                    <p>Wishing you many happy returns!</p>
                 </div>
-                <div>
-                    <p>From Name</p>
-                    <h2>{from_name}</h2>
+                <div className="outputFrom">
+                    <p>Love, {from_name}</p>
                 </div>
-                <p>Description</p>
+                {/* <img src="https://images.unsplash.com/photo-1464347601390-25e2842a37f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80"/> */}
+                {/* <p>Description</p> */}
                 {/* <p>{this.state.description}</p> */}
-                <p>Image url</p>
+                {/* <p>Image url</p> */}
                 {/* <p>{this.state.from_name}</p> */}
-                <p>Audio Url</p>
+                {/* <p>Audio Url</p> */}
                 {/* <p>{this.state.from_name}</p> */}
             </div>
         </div>
