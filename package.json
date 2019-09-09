@@ -8,6 +8,10 @@
     "@rails/ujs": "^6.0.0-alpha",
     "@rails/webpacker": "^4.0.7",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "file-saver": "^2.0.2",
+    "html-to-image": "^0.1.1",
+    "install": "^0.13.0",
+    "npm": "^6.11.3",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"

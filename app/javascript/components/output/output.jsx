@@ -10,7 +10,7 @@ export default class Output extends React.Component{
     } = this.props.values;
 
     return (
-        <div className="screenView reactOutput">
+        <div className="screenView reactOutput" id="cardDownload">
             <div className="reactOutputInner">
                 {/* <div>
                     <h1>{title}</h1>

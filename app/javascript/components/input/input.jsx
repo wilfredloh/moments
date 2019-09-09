@@ -11,7 +11,8 @@ export default class Input extends React.Component{
         onToNameChange, 
         onFromNameChange, 
         onFormSave,
-        onExport
+        onExport,
+        onDownload,
     } = this.props;
 
     return (
@@ -50,6 +51,7 @@ export default class Input extends React.Component{
 
             <button onClick={ ()=> {onFormSave()}}>Save Changes</button>
             <button onClick={ ()=> {onExport()}}>Export</button>
+            <button onClick={()=> {onDownload()}}>TEST IMAGE SAVE</button>
             <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Share

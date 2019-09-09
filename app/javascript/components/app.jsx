@@ -4,6 +4,9 @@ import styles from '../packs/hello_react.css';
 import Input from './input/input'
 import Output from './output/output'
 import Print from './print/print'
+import htmlToImage from 'html-to-image';
+import { saveAs } from 'file-saver';
+
 
 
 export default class App extends React.Component{
@@ -70,6 +73,26 @@ export default class App extends React.Component{
       console.log('link out!!!!')
     }
 
+    downloadImage = () => {
+      console.log ('running!')
+      let node = document.getElementById('cardDownload');
+      htmlToImage.toPng(node)
+      .then(function (dataUrl) {
+        let img = new Image();
+        img.src = dataUrl;
+        document.body.appendChild(img);
+      })
+      
+      .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+      });
+      
+      htmlToImage.toBlob(document.getElementById('cardDownload'))
+      .then(function (blob) {
+        window.saveAs(blob, 'card.png');
+      });
+    }
+
   // RENDER BELOW
   render(){
     let url = `http://localhost:3000/m/${this.state.hash}`;
@@ -89,6 +112,7 @@ export default class App extends React.Component{
           onFromNameChange={this.handleInputFromName}
           onFormSave={this.handleFormUpdate}
           onExport={this.exportImage}
+          onDownload={this.downloadImage}
         />
 
         <Output 
@@ -101,6 +125,7 @@ export default class App extends React.Component{
         <Print 
           values={this.state}
         />
+        
       </div>
 
       {/* <button onClick={ ()=> {this.checkId()}}>Get Links</button> */}
