@@ -25,24 +25,13 @@
   
 
   <div class="createContainer">
-
-    <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
-      <input name="occasion" type="hidden" value="birthday" />
-      <%= form.submit "Begin", :type => :image, :src => "https://images-na.ssl-images-amazon.com/images/I/81HuZ7FzChL._SY500_.jpg", :formtarget => "_blank" %>
-      <p>Hello</p>
+    <% @themes.each do |t| %>
+      <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
+        <input name="occasion" type="hidden" value=<%=t[:occasion]%> />
+        <%= form.submit "Begin", :type => :image, :src => t[:url], :formtarget => "_blank" %>
+        <p><%=t[:title]%></p>
+      <% end %>
     <% end %>
-
-    <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
-      <input name="occasion" type="hidden" value="graduation" />
-      <%= form.submit "Begin", :type => :image, :src => "https://cardthartic.com/wp-content/uploads/2018/01/1314_Outside.jpg", :formtarget => "_blank"%>
-      <p>Hello</p>
-    <% end %>
-
-    <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
-      <input name="occasion" type="hidden" value="farewell" />
-      <%= form.submit "Begin", :type => :image, :src => "https://rlv.zcache.com.au/funny_goodbye_card_rude_farewell_card_funny_card-r366cfdc64eb8438f9249b6ded4723fd1_em0cq_540.jpg", :formtarget => "_blank" %>
-    <% end %>
-    <p>Hello</p>
   </div>
 
   <a href="https://jsfiddle.net/bootstrapious/ko18ravd" target="_blank">For reference</a>
@@ -59,11 +48,7 @@
 
 
 
-
-
 <% else %>
-
-
 
   
   <div class="content lp-top-cont">
