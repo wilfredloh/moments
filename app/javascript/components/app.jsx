@@ -7,8 +7,6 @@ import Print from './print/print'
 import htmlToImage from 'html-to-image';
 import { saveAs } from 'file-saver';
 
-
-
 export default class App extends React.Component{
     constructor() {
       super()
@@ -93,43 +91,65 @@ export default class App extends React.Component{
       });
     }
 
-  // RENDER BELOW
+  // ############################################################
+  // RENDER 
+  // ############################################################
+
   render(){
     let url = `http://localhost:3000/m/${this.state.card}`;
-    let x = ''
-    if (this.state.occasion === 'birthday') {
-      x = 'this is a birthday!'
+    let occ = this.state.occasion;
+
+    // ############################################################
+    // INPUT / OUTPUT VARIABLE 
+    // ############################################################
+    let input = ''
+    let output = ''
+
+    if (occ === 'birthday') {
+      input = <Input 
+        moment={this.state.moment} 
+        url={url}
+        onTitleChange={this.handleInputTitle}
+        onToNameChange={this.handleInputToName}
+        onFromNameChange={this.handleInputFromName}
+        onFormSave={this.handleFormUpdate}
+        onExport={this.exportImage}
+        onDownload={this.downloadImage}
+      />
+      output = <Output 
+        values={this.state}
+      />
+
+    } else if (occ === 'graduation') {
+      output = 'this is grad';
+
+    } else if (occ === 'farewell') {
+      output = 'this is fare';
     }
 
+    // ############################################################
+    // CONTAINER VARIABLE 
+    // ############################################################
+
+    let container = 
+      <React.Fragment>
+        <div className="reactContainerMain">
+            {input}
+            {output}
+        </div>
+        <div className="reactContainerPrint">
+            <Print 
+              values={this.state}
+            />
+        </div>
+      </React.Fragment>
+
+    // ############################################################
+    // RETURN STATEMENT 
+    // ############################################################
+
     return(<div className="reactContainer">
-      
-      <div className="reactContainerMain">
-        <Input 
-          moment={this.state.moment} 
-          url={url}
-          onTitleChange={this.handleInputTitle}
-          onToNameChange={this.handleInputToName}
-          onFromNameChange={this.handleInputFromName}
-          onFormSave={this.handleFormUpdate}
-          onExport={this.exportImage}
-          onDownload={this.downloadImage}
-        />
-
-        <Output 
-          values={this.state}
-        />
-      </div>
-      
-      <div className="reactContainerPrint">
-        {x}
-        <Print 
-          values={this.state}
-        />
-        
-      </div>
-
-      {/* <button onClick={ ()=> {this.checkId()}}>Get Links</button> */}
-
+        {container}
     </div>);
   }
 }
