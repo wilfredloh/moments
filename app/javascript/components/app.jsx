@@ -2,7 +2,9 @@ import React from 'react'
 import { URL } from 'url';
 import styles from '../packs/hello_react.css';
 import Input from './input/input'
-import Output from './output/output'
+import OutputBday from './outputBday/outputBday'
+import OutputGrad from './outputGrad/outputGrad'
+import OutputFw from './outputFw/outputFw'
 import Print from './print/print'
 import htmlToImage from 'html-to-image';
 import { saveAs } from 'file-saver';
@@ -102,29 +104,43 @@ export default class App extends React.Component{
     // ############################################################
     // INPUT / OUTPUT VARIABLE 
     // ############################################################
-    let input = ''
+    let input = <Input 
+      moment={this.state.moment} 
+      url={url}
+      onTitleChange={this.handleInputTitle}
+      onToNameChange={this.handleInputToName}
+      onFromNameChange={this.handleInputFromName}
+      onFormSave={this.handleFormUpdate}
+      onExport={this.exportImage}
+      onDownload={this.downloadImage}
+    />
     let output = ''
 
     if (occ === 'birthday') {
-      input = <Input 
-        moment={this.state.moment} 
-        url={url}
-        onTitleChange={this.handleInputTitle}
-        onToNameChange={this.handleInputToName}
-        onFromNameChange={this.handleInputFromName}
-        onFormSave={this.handleFormUpdate}
-        onExport={this.exportImage}
-        onDownload={this.downloadImage}
-      />
-      output = <Output 
+      // input = <Input 
+      //   moment={this.state.moment} 
+      //   url={url}
+      //   onTitleChange={this.handleInputTitle}
+      //   onToNameChange={this.handleInputToName}
+      //   onFromNameChange={this.handleInputFromName}
+      //   onFormSave={this.handleFormUpdate}
+      //   onExport={this.exportImage}
+      //   onDownload={this.downloadImage}
+      // />
+      output = <OutputBday 
         values={this.state}
       />
 
     } else if (occ === 'graduation') {
-      output = 'this is grad';
+      output = <OutputGrad
+        values={this.state}      
+      />
 
     } else if (occ === 'farewell') {
-      output = 'this is fare';
+      output = <OutputFw
+        values={this.state}      
+      />
+
     }
 
     // ############################################################

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Output extends React.Component{
+export default class OutputGrad extends React.Component{
   
     render() {
     const { 
@@ -10,21 +10,21 @@ export default class Output extends React.Component{
     } = this.props.values;
 
     return (
-        <div className="screenView reactOutput" id="cardDownload">
-            <div className="reactOutputInner">
+        <div className="screenView reactOutputGrad" id="cardDownload">
+            <div className="reactOutputGradInner">
                 {/* <div>
                     <h1>{title}</h1>
                 </div> */}
-                <div className="outputTo">
+                <div className="outputGradTo">
                     <p>Dear {to_name},</p>
                 </div>
-                <div className="outputMessage">
-                    <h2>Have a happy birthday!</h2>
+                <div className="outputGradMessage">
+                    <h2>Graduation is today!!</h2>
                 </div>
                 <div>
                     <p>Wishing you many happy returns!</p>
                 </div>
-                <div className="outputFrom">
+                <div className="outputGradFrom">
                     <p>Love, {from_name}</p>
                 </div>
                 {/* <img src="https://images.unsplash.com/photo-1464347601390-25e2842a37f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80"/> */}
