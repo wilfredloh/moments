@@ -66,21 +66,21 @@ class MomentsController < ApplicationController
   # POST /moments.json
   def create
 
-    if params[:type] == 'birthday'
+    if params[:occasion] == 'birthday'
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
-      p params[:type]
+      p params[:occasion]
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
-    elsif params[:type] == 'graduation'
+    elsif params[:occasion] == 'graduation'
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
-      p params[:type]
+      p params[:occasion]
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
-    elsif params[:type] == 'farewell'
+    elsif params[:occasion] == 'farewell'
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
-      p params[:type]
+      p params[:occasion]
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
     end
 
-    @moment = Moment.new(title:"", to_name:"", from_name:"", image_url: params[:type])
+    @moment = Moment.new(title:"", to_name:"", from_name:"", occasion: params[:occasion])
     @moment.save
 
     
@@ -96,7 +96,7 @@ class MomentsController < ApplicationController
         hashed_id = sha256.hexdigest moment_id
         p 'hashed id'
         p hashed_id
-        @moment.audio_url = hashed_id
+        @moment.card_url = hashed_id
         @moment.save
         
         format.html { redirect_to edit_moment_path(@moment), notice: 'Moment was successfully created.' }
@@ -149,13 +149,13 @@ class MomentsController < ApplicationController
 
     def hashed_moment
       # @moment = Moment.where(audio_url: params[:hash])[0]
-      @moment = Moment.where(audio_url: params[:hash])[0]
+      @moment = Moment.where(card_url: params[:hash])[0]
 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def moment_params
       # params.require(:moment).permit(:title, :to_name, :from_name, :description, :image_url, :audio_url)
-      params.permit(:title, :to_name, :from_name, :description, :image_url, :audio_url)
+      params.permit(:title, :to_name, :from_name, :description, :image_url, :audio_url, :occasion, :card_url)
     end
 end

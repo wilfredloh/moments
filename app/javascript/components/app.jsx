@@ -23,8 +23,8 @@ export default class App extends React.Component{
         from_name: parsedMoment.from_name,
         description: "",
         id: null,
-        type: parsedMoment.image_url,
-        hash: parsedMoment.audio_url,
+        occasion: parsedMoment.occasion,
+        card: parsedMoment.card_url,
       }
     }
     componentDidMount() {
@@ -95,9 +95,9 @@ export default class App extends React.Component{
 
   // RENDER BELOW
   render(){
-    let url = `http://localhost:3000/m/${this.state.hash}`;
+    let url = `http://localhost:3000/m/${this.state.card}`;
     let x = ''
-    if (this.state.type === 'birthday') {
+    if (this.state.occasion === 'birthday') {
       x = 'this is a birthday!'
     }
 
