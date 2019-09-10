@@ -14,8 +14,11 @@
       <h2 class="display-4 text-white indexTitle">Moments for You</h2>
     </div>
 
-    <div id="searchBar">
-      <input class="form-control homepage-searchbar mx-auto" style="width:540px;" id="myInput" type="text" placeholder="Find a theme"/>
+    <div class="search__container" id="searchBar">
+      <p class="search__title">
+          Search for a theme
+      </p>
+      <input class="search__input form-control homepage-searchbar mx-auto" style="width:540px" id="myInput" type="text" placeholder="">
     </div>
 
     <div>
@@ -51,10 +54,10 @@
   <div class="designContainer">
 
       <% @moments.each do |moment| %>
-        <div class='indexCardWrap'>
+        <div class='indexCardWrap2'>
 
-          <p><%= moment.id %></p>
-          <p><%= moment.title %></p>
+          <h2><%= moment.id %></h2>
+          <h2><%= moment.title %></h2>
 
           <p><%= moment.to_name %></p>
           <p><%= moment.from_name %></p>
