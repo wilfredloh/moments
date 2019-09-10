@@ -25,7 +25,7 @@
   
   <div class="indexHeaders">
     <h3>Create a moment</h3>
-    <h5> > </h5>
+    <h6> > </h6>
   </div>
 
   <div class="createContainer">
@@ -33,6 +33,7 @@
     <div class='indexCardWrap'>
       <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
         <input name="occasion" type="hidden" value=<%=t[:occasion]%> />
+        <input name="description" type="hidden" value=<%=t[:description]%> />
         <%= form.submit "Begin", :type => :image, :src => t[:url], :formtarget => "_blank" %>
         <p class="indexCardTitle"><%=t[:title]%></p>
       <% end %>
@@ -43,9 +44,40 @@
   <div class="separator"></div>
 
   <div class="indexAllDesigns indexHeaders">
+    <h3>Your Designs</h3>
+    <h6><a href="/moments"> See all > </a></h6>
+  </div>
+
+  <div class="designContainer">
+
+      <% @moments.each do |moment| %>
+        <div class='indexCardWrap'>
+
+          <p><%= moment.id %></p>
+          <p><%= moment.title %></p>
+
+          <p><%= moment.to_name %></p>
+          <p><%= moment.from_name %></p>
+          <p><strong><%= moment.occasion %></strong></p>
+
+          <a href=<%="/m/#{moment.card_url}"%> target="_blank"><button class="btn btn-primary">Show Card</button></a>
+          
+          <a href=<%=edit_moment_path(moment)%>><button class="btn btn-info">Edit</button></a>
+          
+          <%= link_to moment, method: :delete, data: { confirm: 'Delete this design?' } do %><button class="btn btn-danger">Delete</button>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+
+  <%
+=begin%>
+ <div class="indexAllDesigns indexHeaders">
     <h3><a href="/moments">Your Designs</a></h3>
     <h5> > </h5>
-  </div>
+  </div> 
+<%
+=end%>
 
 </div>
 <!-- End demo content -->

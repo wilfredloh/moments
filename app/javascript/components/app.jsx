@@ -46,20 +46,20 @@ export default class App extends React.Component{
           let occ = parsedMoment.occasion;
           let desc1 = '';
           let desc2 = '';
-          let desc3 = '';
+          // let desc3 = '';
 
           if (occ === 'birthday') {
             desc1 = 'Have a happy birthday!';
             desc2 = 'Wishing you many happy returns';
-            desc3 = '';
+            // desc3 = '';
           } else if (occ === 'graduation') {
             desc1 = '';
             desc2 = '';
-            desc3 = '';
+            // desc3 = '';
           } else if (occ === 'farewell') {
             desc1 = '';
             desc2 = '';
-            desc3 = '';
+            // desc3 = '';
           }
           this.setState({id: id, moment: 
             {
@@ -68,7 +68,7 @@ export default class App extends React.Component{
               from_name: 'From, A good friend',
               description: desc1,
               description2: desc2,
-              description3: desc3,
+              description3: parsedMoment.description3,
               image_url: '',
               audio_url: '',
               music_url: ''

@@ -11,42 +11,37 @@ export default class OutputBday extends React.Component{
 
     const { moment } = this.props
 
-    let output = 
-        <React.Fragment>
-            {/* <div>
-                <h1>{title}</h1>
-            </div> */}
-            <div className="outputBdayTo">
-                <p>{moment.to_name}</p>
-            </div>
-            <div className="outputBdayMessage">
-                <h2>{moment.description}</h2>
-            </div>
-            <div>
-                <p>{moment.description2}</p>
-            </div>
-            <div className="outputBdayTo">
-                <p>{moment.from_name}</p>
-            </div>
-            {/* <img src="https://images.unsplash.com/photo-1464347601390-25e2842a37f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80"/> */}
-            {/* <p>Description</p> */}
-            {/* <p>{this.state.description}</p> */}
-            {/* <p>Image url</p> */}
-            {/* <p>{this.state.from_name}</p> */}
-            {/* <p>Audio Url</p> */}
-            {/* <p>{this.state.from_name}</p> */}
+    let bg = moment.description3;
+    console.log('bgggggggggggggggg')
+    console.log(bg)
 
-        </React.Fragment>
-
-
-    // let bg = moment.description3;
-    let bg = 1;
-
-    if ( bg === 2 ) {
+    if ( bg === '2' ) {
+        console.log('in the right place')
         return (
             <div className="screenView reactOutputBday" id="cardDownload">
                 <div className="reactOutputBdayInner2">
-                    {output}
+                    {/* <div>
+                        <h1>{title}</h1>
+                    </div> */}
+                    <div className="outputBdayTo">
+                        <p>{moment.to_name}</p>
+                    </div>
+                    <div className="outputBdayMessage2">
+                        <h2>{moment.description}</h2>
+                    </div>
+                    <div>
+                        <p>{moment.description2}</p>
+                    </div>
+                    <div className="outputBdayTo2">
+                        <p>{moment.from_name}</p>
+                    </div>
+                    {/* <img src="https://images.unsplash.com/photo-1464347601390-25e2842a37f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80"/> */}
+                    {/* <p>Description</p> */}
+                    {/* <p>{this.state.description}</p> */}
+                    {/* <p>Image url</p> */}
+                    {/* <p>{this.state.from_name}</p> */}
+                    {/* <p>Audio Url</p> */}
+                    {/* <p>{this.state.from_name}</p> */}
                 </div>
             </div>
         );
@@ -55,7 +50,28 @@ export default class OutputBday extends React.Component{
         return (
             <div className="screenView reactOutputBday" id="cardDownload">
                 <div className="reactOutputBdayInner">
-                    {output}
+                    {/* <div>
+                        <h1>{title}</h1>
+                    </div> */}
+                    <div className="outputBdayTo">
+                        <p>{moment.to_name}</p>
+                    </div>
+                    <div className="outputBdayMessage">
+                        <h2>{moment.description}</h2>
+                    </div>
+                    <div>
+                        <p>{moment.description2}</p>
+                    </div>
+                    <div className="outputBdayFrom">
+                        <p>{moment.from_name}</p>
+                    </div>
+                    {/* <img src="https://images.unsplash.com/photo-1464347601390-25e2842a37f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80"/> */}
+                    {/* <p>Description</p> */}
+                    {/* <p>{this.state.description}</p> */}
+                    {/* <p>Image url</p> */}
+                    {/* <p>{this.state.from_name}</p> */}
+                    {/* <p>Audio Url</p> */}
+                    {/* <p>{this.state.from_name}</p> */}
                 </div>
             </div>
         );

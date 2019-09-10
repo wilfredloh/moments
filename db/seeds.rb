@@ -11,48 +11,55 @@ b1 = Theme.create(
   :title => 'Birthday 1', 
   :occasion => 'birthday', 
   :url => "https://images.unsplash.com/photo-1464347601390-25e2842a37f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80",
-  :mood => 'happy'
+  :mood => 'happy',
+  :description => '1'
 )
 
 b2 = Theme.create(
   :title => 'Birthday 2', 
   :occasion => 'birthday', 
   :url => "https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
-  :mood => 'happy'
+  :mood => 'happy',
+  :description => '2'
 )
 
 g1 = Theme.create(
   :title => 'Graduation 1', 
   :occasion => 'graduation', 
   :url => "https://images.unsplash.com/photo-1566125618135-8063e23d8e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
-  :mood => 'sentimental'
+  :mood => 'sentimental',
+  :description => '1'
 )
 
 g2 = Theme.create(
   :title => 'Graduation 2', 
   :occasion => 'graduation', 
   :url => "https://images.unsplash.com/photo-1531686264889-56fdcabd163f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=1650&q=80",
-  :mood => 'sentimental'
+  :mood => 'sentimental',
+  :description => '2'
 )
 
 f1 = Theme.create(
   :title => 'Farewell 1', 
   :occasion => 'farewell', 
   :url => "https://images.unsplash.com/photo-1529268209110-62be1d87fe75?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-  :mood => 'emotional'
+  :mood => 'emotional',
+  :description => '3'
 )
 
 f2 = Theme.create(
   :title => 'Farewell 2', 
   :occasion => 'farewell', 
   :url => "https://images.unsplash.com/photo-1549301019-6013533c514d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1656&q=80",
-  :mood => 'emotional'
+  :mood => 'emotional',
+  :description => '2'
 )
 
 f3 = Theme.create(
   :title => 'Farewell 3', 
   :occasion => 'farewell', 
   :url => "https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-  :mood => 'emotional'
+  :mood => 'emotional',
+  :description => '3'
 )
 

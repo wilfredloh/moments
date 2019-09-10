@@ -82,10 +82,11 @@ body * {
 .indexHeaders {
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
-.indexHeaders h5 {
-    padding-left: 0.5rem;
+.indexHeaders h6 {
+    padding-left: 0.7rem;
     transform: translate(0, 0.15rem)
 }
 
@@ -95,11 +96,18 @@ body * {
     }
 }
 
-// #sidebarCollapse {
-//     position: absolute;
-//     left: 18rem;
-//     top: 0;
-// }
+.designContainer {
+    display: flex;
+    overflow-x: scroll;
+    text-align: center;
+}
+
+.indexCardWrap {
+    width: 13rem;
+    height: auto;
+    margin: 1rem;
+    border-radius: 0.5rem;
+}
 
 // ###########################################################
 // INDEX PAGE 

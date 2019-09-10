@@ -7,41 +7,15 @@ class MomentsController < ApplicationController
   # GET /moments
   # GET /moments.json
   def index
-    @moments = Moment.all
+    @moments = Moment.all.sort_by{|m| m.updated_at}.reverse
     render layout: "navbarHome"
   end
 
   # GET /moments/1
   # GET /moments/1.json
-  def show
-    # @moment = hashed_moment
   
-    # moment_id = moment.id.to_s
-    # p 'moment id'
-    # p moment_id
-    # Digest::SHA256.hexdigest 'message'
-    # sha256 = Digest::SHA256.new
-    # p sha256.hexdigest '9'
-    # p sha256.hexdigest '10'
-    # p sha256.hexdigest '11'
-
+  def show
   end
-
-  # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
-  # AJAX the links in edit page, so that I don't need to generate a new page
-  # a href [moments] <%=moment.hash/> (when i create the file)
-  #hassssshhhhh itttt first and store it in the database
-
-
-  # def show
-  #   #Moment.find (dont do this)
-  #   moment = Moment.where(hash:params[:hash])
-  # end
-
-  # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
   def card
     @moment = hashed_moment
@@ -65,7 +39,6 @@ class MomentsController < ApplicationController
   # POST /moments
   # POST /moments.json
   def create
-
     if params[:occasion] == 'birthday'
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
       p params[:occasion]
@@ -80,10 +53,8 @@ class MomentsController < ApplicationController
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
     end
 
-    @moment = Moment.new(title:"", to_name:"", from_name:"", occasion: params[:occasion])
+    @moment = Moment.new(title:"", to_name:"", from_name:"", occasion: params[:occasion], description3: params[:description])
     @moment.save
-
-    
 
     respond_to do |format|
       if @moment.save

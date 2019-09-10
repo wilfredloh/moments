@@ -78,8 +78,11 @@ body * {
     padding: 1rem;
 }
 
+
+/* ################################################################ */
 /* ################################################################ */
 /* ALL OUTPUT BIRTHDAY HERE */
+/* ################################################################ */
 /* ################################################################ */
 
 .reactOutputBday {
@@ -91,21 +94,9 @@ body * {
     /* max-width: 1000px; */
 }
 
-.reactOutputBdayInner2 {
-    /* border: 2px solid black; */
-    height: 42vw;
-    max-width: 1000px;
-    width: 60vw;
-    margin: 0 auto;
-    background: #1c2143;
-    background: url("https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
-    background-repeat: no-repeat;
-    background-size: auto 42vw;
-    color: #f0cf76;
-    border-radius: 0.35rem;
-    text-align: center;
-    overflow: hidden;
-}
+/* ################################################################ */
+/* BIRTHDAY 1 
+/* ################################################################ */
 
 .reactOutputBdayInner {
     /* border: 2px solid black; */
@@ -148,8 +139,59 @@ body * {
     text-transform: uppercase;
 }
 
+.outputBdayFrom p {
+    font-family: cursive;
+}
+
+/* ################################################################ */
+/* BIRTHDAY 2
+/* ################################################################ */
+
+.reactOutputBdayInner2 {
+    /* border: 2px solid black; */
+    height: 42vw;
+    max-width: 1000px;
+    width: 60vw;
+    margin: 0 auto;
+    background: #1c2143;
+    background: url("https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+    background-repeat: no-repeat;
+    background-size: auto 42vw;
+    color: #f0cf76;
+    border-radius: 0.35rem;
+    text-align: center;
+    overflow: hidden;
+}
+
+.reactOutputBdayInner2 div {
+    margin: 8%;
+}
+
+.reactOutputBdayInner2 img {
+    width: 40%;
+    height: auto;
+}
+
+.reactOutputBdayInner2 p {
+    font-size: 2vw;
+    color: #5b839b;
+}
+
+.outputBdayMessage2 {
+}
+
+.outputBdayMessage2 h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.outputBdayTo2 p {
+    font-family: cursive;
+}
+
+/* ################################################################ */
 /* ################################################################ */
 /* ALL OUTPUT GRADUATION HERE */
+/* ################################################################ */
 /* ################################################################ */
 
 .reactOutputGrad {
