@@ -30,7 +30,7 @@
 
   <div class="createContainer">
     <% @themes.each do |t| %>
-    <div>
+    <div class='indexCardWrap'>
       <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
         <input name="occasion" type="hidden" value=<%=t[:occasion]%> />
         <%= form.submit "Begin", :type => :image, :src => t[:url], :formtarget => "_blank" %>
