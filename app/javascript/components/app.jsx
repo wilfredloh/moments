@@ -195,18 +195,22 @@ export default class App extends React.Component{
       //   onDownload={this.downloadImage}
       // />
       output = <OutputBday 
-        values={this.state}
+        // values={this.state}
         moment={this.state.moment}
       />
 
     } else if (occ === 'graduation') {
       output = <OutputGrad
-        values={this.state}      
+        // values={this.state}  
+        moment={this.state.moment}
+
       />
 
     } else if (occ === 'farewell') {
       output = <OutputFw
-        values={this.state}      
+        // values={this.state} 
+        moment={this.state.moment}
+
       />
 
     }

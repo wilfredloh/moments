@@ -12,8 +12,6 @@ export default class OutputBday extends React.Component{
     const { moment } = this.props
 
     let bg = moment.description3;
-    console.log('bgggggggggggggggg')
-    console.log(bg)
 
     if ( bg === '2' ) {
         console.log('in the right place')

@@ -9,6 +9,18 @@ export default class OutputFw extends React.Component{
         from_name
     } = this.props.values;
 
+    const { moment } = this.props
+
+    let bg = moment.description3;
+
+    if ( bg === '3') {
+
+    } else if ( bg === '2') {
+
+    } else {
+
+    }
+
     return (
         <div className="screenView reactOutputFw" id="cardDownload">
             <div className="reactOutputFwInner">
