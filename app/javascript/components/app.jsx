@@ -44,28 +44,35 @@ export default class App extends React.Component{
         console.log('in second')
 
           let occ = parsedMoment.occasion;
+          let toName = '';
+          let fromName = '';
           let desc1 = '';
           let desc2 = '';
           // let desc3 = '';
 
           if (occ === 'birthday') {
+            toName = 'Dear friend,';
+            fromName = 'From, A good friend';
             desc1 = 'Have a happy birthday!';
             desc2 = 'Wishing you many happy returns';
             // desc3 = '';
           } else if (occ === 'graduation') {
-            desc1 = '';
-            desc2 = '';
+            toName = 'Class of SEI 19,';
+            fromName = 'All the best, Friend';
+            desc1 = 'Congratulations and Happy Graduation!';
+            desc2 = 'You have a bright future ahead of you';
             // desc3 = '';
           } else if (occ === 'farewell') {
-            desc1 = '';
-            desc2 = '';
-            // desc3 = '';
+            toName = 'My dear friend,';
+            fromName = 'Until we meet again, Another friend';
+            desc1 = 'Thanks for the memories!';
+            desc2 = "I've learned so much from you! I wish you all the best.";
           }
           this.setState({id: id, moment: 
             {
               title: `Card ${id}`,
-              to_name: 'Dear friend,',
-              from_name: 'From, A good friend',
+              to_name: toName,
+              from_name: fromName,
               description: desc1,
               description2: desc2,
               description3: parsedMoment.description3,
@@ -184,33 +191,18 @@ export default class App extends React.Component{
     let output = ''
 
     if (occ === 'birthday') {
-      // input = <Input 
-      //   moment={this.state.moment} 
-      //   url={url}
-      //   onTitleChange={this.handleInputTitle}
-      //   onToNameChange={this.handleInputToName}
-      //   onFromNameChange={this.handleInputFromName}
-      //   onFormSave={this.handleFormUpdate}
-      //   onExport={this.exportImage}
-      //   onDownload={this.downloadImage}
-      // />
       output = <OutputBday 
-        // values={this.state}
         moment={this.state.moment}
       />
 
     } else if (occ === 'graduation') {
       output = <OutputGrad
-        // values={this.state}  
         moment={this.state.moment}
-
       />
 
     } else if (occ === 'farewell') {
       output = <OutputFw
-        // values={this.state} 
         moment={this.state.moment}
-
       />
 
     }

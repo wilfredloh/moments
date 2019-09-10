@@ -44,7 +44,7 @@ f1 = Theme.create(
   :occasion => 'farewell', 
   :url => "https://images.unsplash.com/photo-1529268209110-62be1d87fe75?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
   :mood => 'emotional',
-  :description => '3'
+  :description => '1'
 )
 
 f2 = Theme.create(

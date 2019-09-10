@@ -23,7 +23,7 @@ export default class Input extends React.Component{
 
     return (
         <div className="screenView reactInput">
-            <input name="cal" type="date"/>
+            {/* <input name="cal" type="date"/> */}
             <div>
                 {/* do form validation so TITLE cannot be empty */}
                 <p>Title</p>

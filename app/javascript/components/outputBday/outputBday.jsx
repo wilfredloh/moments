@@ -3,11 +3,6 @@ import React from 'react';
 export default class OutputBday extends React.Component{
   
     render() {
-    // const { 
-    //     title,
-    //     to_name,
-    //     from_name
-    // } = this.props.values;
 
     const { moment } = this.props
 
