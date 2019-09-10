@@ -63,6 +63,15 @@ export default class Input extends React.Component{
                 <p>Audio</p>
             </div>
 
+            {/* <div className="toast">
+                <div className="toast-header">
+                    Toast Header
+                </div>
+                <div className="toast-body">
+                    Some text inside the toast body
+                </div>
+            </div> */}
+
             <button onClick={ ()=> {onFormSave()}}>Save Changes</button>
             <button onClick={()=> {onDownload()}}>Download</button>
             <div className="dropdown">

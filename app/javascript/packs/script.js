@@ -16,20 +16,19 @@ window.onload = () => {
             $('#sidebar, #content').toggleClass('active');
         });
     });
-      
-    $('#myInput').on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#createContainerId div").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-    });
 
     $('#myInput').on("keyup", function() {
         var value = $(this).val().toLowerCase();
         $(".indexCardWrap").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
-      });
+    });
+
+    // $("#x").click(function(){
+    //     console.log('wokrs!!')
+    //     $('.toast').toast('show');
+    // });
+
 
     
 
