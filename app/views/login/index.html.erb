@@ -3,23 +3,29 @@
 
 
 <!-- Page content holder -->
-<div class="page-content p-5" id="content">
+<div class="page-content" id="content">
   <!-- Toggle button -->
-  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold"><img class="d-flex align-items-center" src="https://img.icons8.com/android/50/000000/menu.png" width="20rem" height="20rem"></small></button>
 
   <!-- Demo content -->
-  <h2 class="display-4 text-white">Design Anything</h2>
+  <div class="indexTopHolder">
 
-  <div class="row">
-    <div class="column" id="searchBar">
-      <input class="form-control homepage-searchbar" style="width:540px;" id="myInput" type="text" placeholder="Find a theme"/>
+    <div>
+      <h2 class="display-4 text-white indexTitle">Moments for You</h2>
+    </div>
+
+    <div id="searchBar">
+      <input class="form-control homepage-searchbar mx-auto" style="width:540px;" id="myInput" type="text" placeholder="Find a theme"/>
+    </div>
+
+    <div>
+      <p class="lead text-white mb-0">Create memories that last a lifetime</p>
     </div>
   </div>
-
-  <p class="lead text-white mb-0">Creativity is the natural order of life.</p>
   
-  <div>
-    <h2>Create a design > </h2>
+  <div class="indexHeaders">
+    <h3>Create a moment</h3>
+    <h5> > </h5>
   </div>
 
   <div class="createContainer">
@@ -28,16 +34,17 @@
       <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
         <input name="occasion" type="hidden" value=<%=t[:occasion]%> />
         <%= form.submit "Begin", :type => :image, :src => t[:url], :formtarget => "_blank" %>
-        <p><%=t[:title]%></p>
+        <p class="indexCardTitle"><%=t[:title]%></p>
       <% end %>
     </div>
     <% end %>
   </div>
 
-  <a href="https://jsfiddle.net/bootstrapious/ko18ravd" target="_blank">For reference</a>
   <div class="separator"></div>
-  <div>
-    <a href="/moments">Your Designs > </a>
+
+  <div class="indexAllDesigns indexHeaders">
+    <h3><a href="/moments">Your Designs</a></h3>
+    <h5> > </h5>
   </div>
 
 </div>
@@ -45,7 +52,6 @@
 
 
   
-
 
 
 <% else %>
