@@ -91,6 +91,22 @@ body * {
     /* max-width: 1000px; */
 }
 
+.reactOutputBdayInner2 {
+    /* border: 2px solid black; */
+    height: 42vw;
+    max-width: 1000px;
+    width: 60vw;
+    margin: 0 auto;
+    background: #1c2143;
+    background: url("https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+    background-repeat: no-repeat;
+    background-size: auto 42vw;
+    color: #f0cf76;
+    border-radius: 0.35rem;
+    text-align: center;
+    overflow: hidden;
+}
+
 .reactOutputBdayInner {
     /* border: 2px solid black; */
     height: 42vw;
@@ -152,7 +168,7 @@ body * {
     width: 60vw;
     margin: 0 auto;
     background: #1c2143;
-    background: url("https://images.unsplash.com/photo-1464347601390-25e2842a37f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80");
+    background: url("https://images.unsplash.com/photo-1566125618135-8063e23d8e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80");
     background-repeat: no-repeat;
     background-size: auto 42vw;
     color: #f0cf76;

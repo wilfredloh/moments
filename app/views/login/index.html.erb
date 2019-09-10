@@ -22,15 +22,15 @@
     <h2>Create a design > </h2>
   </div>
 
-  
-
   <div class="createContainer">
     <% @themes.each do |t| %>
+    <div>
       <%= form_with scope: :moment, url: moments_path, local: true do |form| %>
         <input name="occasion" type="hidden" value=<%=t[:occasion]%> />
         <%= form.submit "Begin", :type => :image, :src => t[:url], :formtarget => "_blank" %>
         <p><%=t[:title]%></p>
       <% end %>
+    </div>
     <% end %>
   </div>
 

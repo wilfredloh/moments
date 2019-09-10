@@ -6,7 +6,8 @@ export default class OutputGrad extends React.Component{
     const { 
         title,
         to_name,
-        from_name
+        from_name,
+        moment,
     } = this.props.values;
 
     return (
@@ -16,16 +17,19 @@ export default class OutputGrad extends React.Component{
                     <h1>{title}</h1>
                 </div> */}
                 <div className="outputGradTo">
-                    <p>Dear {to_name},</p>
+                    <p>Proudly Announcing</p>
                 </div>
                 <div className="outputGradMessage">
-                    <h2>Graduation is today!!</h2>
+                    <h2>Class of SEI 19</h2>
                 </div>
                 <div>
-                    <p>Wishing you many happy returns!</p>
+                    <p>Graduate</p>
+                </div>
+                <div>
+                    <h3>{moment.to_name}</h3>
                 </div>
                 <div className="outputGradFrom">
-                    <p>Love, {from_name}</p>
+                    <p>Love, {moment.from_name}</p>
                 </div>
                 {/* <img src="https://images.unsplash.com/photo-1464347601390-25e2842a37f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80"/> */}
                 {/* <p>Description</p> */}

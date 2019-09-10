@@ -18,9 +18,12 @@
           <p><%= moment.from_name %></p>
           <p><strong><%= moment.occasion %></strong></p>
 
-          <button class="btn btn-primary"><%= link_to 'See card', "/m/#{moment.card_url}", target: :_blank %></button>
-          <button class="btn btn-info"><%= link_to 'Edit', edit_moment_path(moment) %></button>
-          <button class="btn btn-danger"><%= link_to 'Delete', moment, method: :delete, data: { confirm: 'Delete this design?' } %></button>
+          <a href=<%="/m/#{moment.card_url}"%> target="_blank"><button class="btn btn-primary">Show Card</button></a>
+          
+          <a href=<%=edit_moment_path(moment)%>><button class="btn btn-info">Edit</button></a>
+          
+          <%= link_to moment, method: :delete, data: { confirm: 'Delete this design?' } do %><button class="btn btn-danger">Delete</button>
+          <% end %>
 
         </div>
 

@@ -15,66 +15,123 @@ export default class App extends React.Component{
       // passing in Ruby variables (moment)
       let moment = document.getElementById('currentMoment');
       let parsedMoment = JSON.parse(moment.getAttribute('data'));
- 
+
       this.state = {
         moment: parsedMoment,
-        title: parsedMoment.title,
-        to_name: parsedMoment.to_name,
-        from_name: parsedMoment.from_name,
-        description: "",
+        // title: parsedMoment.title,
+        // to_name: parsedMoment.to_name,
+        // from_name: parsedMoment.from_name,
+        // description: parsedMoment.description,
         id: null,
         occasion: parsedMoment.occasion,
         card: parsedMoment.card_url,
       }
     }
+
     componentDidMount() {
+      let moment = document.getElementById('currentMoment');
+      let parsedMoment = JSON.parse(moment.getAttribute('data'));
       let url = window.location.href;
       let id = url.split('/')[4];
-      this.setState({id: id});
+      console.log('check title')
+      console.log(parsedMoment)
+      console.log(parsedMoment.title)
+
+      if (parsedMoment.title) {
+        console.log('in first')
+        this.setState({ id: id });
+      } else {
+        console.log('in second')
+
+          let occ = parsedMoment.occasion;
+          let desc1 = '';
+          let desc2 = '';
+          let desc3 = '';
+
+          if (occ === 'birthday') {
+            desc1 = 'Have a happy birthday!';
+            desc2 = 'Wishing you many happy returns';
+            desc3 = '';
+          } else if (occ === 'graduation') {
+            desc1 = '';
+            desc2 = '';
+            desc3 = '';
+          } else if (occ === 'farewell') {
+            desc1 = '';
+            desc2 = '';
+            desc3 = '';
+          }
+          this.setState({id: id, moment: 
+            {
+              title: `Card ${id}`,
+              to_name: 'Dear friend,',
+              from_name: 'From, A good friend',
+              description: desc1,
+              description2: desc2,
+              description3: desc3,
+              image_url: '',
+              audio_url: '',
+              music_url: ''
+            }
+          });
+      }
+      
     }
 
     // INPUT COMPONENT FUNCTIONS
     handleInputTitle = (event) => {
       let input = event.target.value;
-      this.setState({title: input})
+      this.state.moment.title = input
+      this.setState({ moment: this.state.moment})
     }
     handleInputToName = (event) => {
       let input = event.target.value;
-      this.setState({to_name: input})
+      this.state.moment.to_name = input
+      this.setState({ ment: this.state.moment})
     }
     handleInputFromName = (event) => {
       let input = event.target.value;
-      this.setState({from_name: input})
+      this.state.moment.from_name = input
+      this.setState({ moment: this.state.moment})
     }
+    handleInputDesc1 = (event) => {
+      let input = event.target.value;
+      this.state.moment.description = input
+      this.setState({ moment: this.state.moment})
+    }
+    handleInputDesc2 = (event) => {
+      let input = event.target.value;
+      this.state.moment.description2 = input
+      this.setState({ moment: this.state.moment})
+    }
+    // handleInputDesc3 = (event) => {
+    //   let input = event.target.value;
+    //   this.state.moment.description3 = input
+    //   this.setState({ moment: this.state.moment})
+    // }
     handleFormUpdate = () => {
       var reactThis = this;
       var responseHandler = () => {
-        console.log('in response handler!')
         if (request.readyState === 4) {
           if (request.status === 200) {
+            this.showSave();
             let response = JSON.parse(request.responseText);
-            console.log (response);
             // reactThis.setState({stuff: response});
           }
         }
       };
       var request = new XMLHttpRequest();
       request.addEventListener("load", responseHandler);
-      let jsonObject = JSON.stringify(reactThis.state);
+      console.log('reacttttt stattteeeeee')
+      console.log(reactThis.state)
+      let jsonObject = JSON.stringify(reactThis.state.moment);
       request.open("PATCH", `http://localhost:3000/moments/${this.state.id}`);
       request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       request.send(jsonObject);
     }
-    exportImage = () => {
-      console.log('exported!!!!')
-      print();
-    }
-    getLinks = () => {
-      console.log('link out!!!!')
-    }
 
     downloadImage = () => {
-      console.log ('running!')
+      console.log ('download image')
       let node = document.getElementById('cardDownload');
       htmlToImage.toPng(node)
       .then(function (dataUrl) {
@@ -92,6 +149,9 @@ export default class App extends React.Component{
         window.saveAs(blob, 'card.png');
       });
     }
+    showSave () {
+      console.log('Changes have been saved!')
+    }
 
   // ############################################################
   // RENDER 
@@ -100,6 +160,9 @@ export default class App extends React.Component{
   render(){
     let url = `http://localhost:3000/m/${this.state.card}`;
     let occ = this.state.occasion;
+
+    console.log ('before rendering')
+    console.log (this.state.moment)
 
     // ############################################################
     // INPUT / OUTPUT VARIABLE 
@@ -110,9 +173,13 @@ export default class App extends React.Component{
       onTitleChange={this.handleInputTitle}
       onToNameChange={this.handleInputToName}
       onFromNameChange={this.handleInputFromName}
+      onDesc1Change={this.handleInputDesc1}
+      onDesc2Change={this.handleInputDesc2}
+      // onDesc3Change={this.handleInputDesc3}
       onFormSave={this.handleFormUpdate}
       onExport={this.exportImage}
       onDownload={this.downloadImage}
+      onFormLeave={this.handleFormUpdate}
     />
     let output = ''
 
@@ -129,6 +196,7 @@ export default class App extends React.Component{
       // />
       output = <OutputBday 
         values={this.state}
+        moment={this.state.moment}
       />
 
     } else if (occ === 'graduation') {

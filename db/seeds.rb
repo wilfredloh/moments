@@ -8,22 +8,51 @@
 
 
 b1 = Theme.create(
-  :title => 'Birthday', 
+  :title => 'Birthday 1', 
   :occasion => 'birthday', 
-  :url => "https://images-na.ssl-images-amazon.com/images/I/81HuZ7FzChL._SY500_.jpg",
+  :url => "https://images.unsplash.com/photo-1464347601390-25e2842a37f7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1985&q=80",
+  :mood => 'happy'
+)
+
+b2 = Theme.create(
+  :title => 'Birthday 2', 
+  :occasion => 'birthday', 
+  :url => "https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
   :mood => 'happy'
 )
 
 g1 = Theme.create(
-  :title => 'Graduation', 
+  :title => 'Graduation 1', 
   :occasion => 'graduation', 
-  :url => "https://cardthartic.com/wp-content/uploads/2018/01/1314_Outside.jpg",
+  :url => "https://images.unsplash.com/photo-1566125618135-8063e23d8e4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+  :mood => 'sentimental'
+)
+
+g2 = Theme.create(
+  :title => 'Graduation 2', 
+  :occasion => 'graduation', 
+  :url => "https://images.unsplash.com/photo-1531686264889-56fdcabd163f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=1650&q=80",
   :mood => 'sentimental'
 )
 
 f1 = Theme.create(
-  :title => 'Farewell', 
+  :title => 'Farewell 1', 
   :occasion => 'farewell', 
-  :url => "https://rlv.zcache.com.au/funny_goodbye_card_rude_farewell_card_funny_card-r366cfdc64eb8438f9249b6ded4723fd1_em0cq_540.jpg",
+  :url => "https://images.unsplash.com/photo-1529268209110-62be1d87fe75?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
   :mood => 'emotional'
 )
+
+f2 = Theme.create(
+  :title => 'Farewell 2', 
+  :occasion => 'farewell', 
+  :url => "https://images.unsplash.com/photo-1549301019-6013533c514d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1656&q=80",
+  :mood => 'emotional'
+)
+
+f3 = Theme.create(
+  :title => 'Farewell 3', 
+  :occasion => 'farewell', 
+  :url => "https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+  :mood => 'emotional'
+)
+

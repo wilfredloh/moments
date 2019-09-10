@@ -26,13 +26,18 @@ body {
 
 .createContainer {
     display: flex;
-    flex-flow: row wrap;
+    overflow-x: scroll;
 }
 
 .createContainer input {
-    width: 8rem;    
+    width: 12rem;    
     height: auto;
     margin: 1rem;
+    border-radius: 0.5rem;
+}
+
+.createContainer div {
+    border-radius: 1rem;
 }
 
 // ###########################################################

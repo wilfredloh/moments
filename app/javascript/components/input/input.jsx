@@ -4,37 +4,51 @@ import styles from './style.scss';
 export default class Input extends React.Component{
   
     render() {
+        console.log('input JSX')
+        console.log(this.props.moment)
     const { 
         moment, 
         url, 
         onTitleChange, 
         onToNameChange, 
         onFromNameChange, 
+        onDesc1Change,
+        onDesc2Change,
+        // onDesc3Change,
         onFormSave,
         onExport,
         onDownload,
+        onFormLeave,
     } = this.props;
 
     return (
         <div className="screenView reactInput">
-            <h1>REACT</h1>
             <input name="cal" type="date"/>
             <div>
+                {/* do form validation so TITLE cannot be empty */}
                 <p>Title</p>
-                <input onChange={(event)=>{onTitleChange(event);}} defaultValue={moment.title}/>
+                <input onChange={(event)=>{onTitleChange(event);}} defaultValue={moment.title} onBlur={()=>{onFormLeave()}}/>
             </div>
             <div>
                 <p>To Name</p>
-                <input onChange={(event)=>{onToNameChange(event);}} defaultValue={moment.to_name}/>
+                <input onChange={(event)=>{onToNameChange(event);}} defaultValue={moment.to_name} onBlur={()=>{onFormLeave()}}/>
             </div>
             <div>  
                 <p>From Name</p>
-                <input onChange={(event)=>{onFromNameChange(event);}} defaultValue={moment.from_name}/>
+                <input onChange={(event)=>{onFromNameChange(event);}} defaultValue={moment.from_name} onBlur={()=>{onFormLeave()}}/>
             </div>
             <div>  
                 <p>Description</p>
-                <input onChange={(event)=>{onFromNameChange(event);}}/>
+                <textarea onChange={(event)=>{onDesc1Change(event);}} defaultValue={moment.description} onBlur={()=>{onFormLeave()}}/>
             </div>
+            <div>  
+                <p>Description 2</p>
+                <textarea onChange={(event)=>{onDesc2Change(event);}} defaultValue={moment.description2} onBlur={()=>{onFormLeave()}}/>
+            </div>
+            {/* <div>  
+                <p>Description 3</p>
+                <textarea onChange={(event)=>{onDesc3Change(event);}} defaultValue={moment.description3} onBlur={()=>{onFormLeave()}}/>
+            </div> */}
             <div>  
                 <p>Add attachments</p>
             </div>
@@ -50,8 +64,7 @@ export default class Input extends React.Component{
             </div>
 
             <button onClick={ ()=> {onFormSave()}}>Save Changes</button>
-            <button onClick={ ()=> {onExport()}}>Export</button>
-            <button onClick={()=> {onDownload()}}>TEST IMAGE SAVE</button>
+            <button onClick={()=> {onDownload()}}>Download</button>
             <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Share
