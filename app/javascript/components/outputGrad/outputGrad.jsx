@@ -42,7 +42,7 @@ export default class OutputGrad extends React.Component{
                 <div className="outputGradMessage">
                         <h2>{moment.description}</h2>
                     </div>
-                    <div>
+                    <div className="outputGradMessageSecond">
                         <p>{moment.description2}</p>
                     </div>
                 

@@ -209,3 +209,22 @@ body * {
 // ###########################################################
 // END
 // ###########################################################
+
+.musicButtons {
+    display: flex;
+    flex-flow: row-reverse;
+}
+
+.musicButtons input {
+    margin: 0.5rem;
+    border-radius: 2rem;
+    padding: 0.25rem 1rem;
+}
+
+.musicButtons input:hover {
+    cursor: pointer;
+}
+
+// ###########################################################
+// END
+// ###########################################################

@@ -59,7 +59,7 @@ export default class App extends React.Component{
           } else if (occ === 'graduation') {
             toName = 'Class of SEI 19,';
             fromName = 'All the best, Friend';
-            desc1 = 'Congratulations and Happy Graduation!';
+            desc1 = 'Happy Graduation!';
             desc2 = 'You have a bright future ahead of you';
             // desc3 = '';
           } else if (occ === 'farewell') {

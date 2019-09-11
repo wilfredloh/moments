@@ -1,8 +1,8 @@
 $white: #F9F3E4;
-$pink: #F29DAB;
-$rose: #DD899E;
-$tan: #F2CDC1;
-$taupe: #D0B2AF;
+// $pink: #F29DAB;
+// $rose: #DD899E;
+// $tan: #F2CDC1;
+// $taupe: #D0B2AF;
 
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 
@@ -98,14 +98,16 @@ $font: 'Questrial', sans-serif;
 .box h1 {
   font-size: 1.2em;
   padding-top: 15px;
-  color: $rose;
+  color: black;
   text-align: center;
+  margin: 1.5rem;
 }
 
 .box p {
-  font-size: .5em;
+  font-size: 1rem;
+  margin: 2rem;
 }
 
 .date {
-  color: $taupe;
+  // color: $taupe;
 }

@@ -5,13 +5,13 @@
 .color1{
 	color:#1BBC9B;
 	font-size: 26px;
-	line-height: 1px;
+	line-height: 1.5rem;
 }
 
 .color2{
 	color:#C0392B;
 	font-size: 26px;
-	line-height: 1px;
+	line-height: 1.5rem;
 }
 
 
@@ -30,7 +30,7 @@
 }
 
 .card:hover {
-	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+	transform: translate(-50%,-50%) perspective(2000px) rotate(5deg) scale(1.2);
 	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
 }
 
@@ -103,7 +103,7 @@
 .card .details p {
 	font-size: 15px;
 	line-height: 5px;
-	transform: rotate(-10deg);
+	// transform: rotate(-5deg);
 	padding: 0 0 0 20px;
 }
 

@@ -17,19 +17,19 @@
   </div>
 
   <ul class="nav flex-column bg-white mb-0">
-    <li class="nav-item">
+    <li class="nav-item sideNavItem">
       <a href="/" class="nav-link text-dark font-italic bg-light">
           Home
       </a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item sideNavItem">
       <a href="/moments" class="nav-link text-dark font-italic bg-light">
           All Your Designs
       </a> 
 
     </li>
     
-    <li class="nav-item">
+    <li class="nav-item sideNavItem">
       <%= link_to 'Sign out', destroy_user_session_url, method: :delete, class: 'nav-link text-dark font-italic bg-light px-3' %>
     </li>
   </ul>

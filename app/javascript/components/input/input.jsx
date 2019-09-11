@@ -52,12 +52,12 @@ export default class Input extends React.Component{
                 <textarea onChange={(event)=>{onDesc3Change(event);}} defaultValue={moment.description3} onBlur={()=>{onFormLeave()}}/>
             </div> */}
             
-            <div>  
+            {/* <div>  
                 <p>Attachment</p>
                 <form encType="multipart/form-data">
                     <input type="file" name="myFile"/>
                 </form>
-            </div>
+            </div> */}
 
             {/* <div className="toast">
                 <div className="toast-header">
@@ -70,7 +70,9 @@ export default class Input extends React.Component{
 
             <button onClick={ ()=> {onFormSave()}} className="btn btn-secondary my-3">Save Changes</button>
             <button onClick={()=> {onDownload()}} className="btn btn-info mr-3">Download</button>
-            <div className="btn-group dropup">
+            <a href={url} target="_blank"><button className="btn btn-info">Share Link</button></a>
+
+            {/* <div className="btn-group dropup">
                 <button className="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Share
                 </button>
@@ -79,7 +81,7 @@ export default class Input extends React.Component{
                     <a className="dropdown-item" href="#">QR code</a>
                     <a className="dropdown-item" href="#">Facebook</a>
                 </div>
-            </div>
+            </div> */}
             <button onClick={()=> {onFormDelete()}} className="btn btn-danger mr-3 my-3">Delete</button>
         </div>
     );
