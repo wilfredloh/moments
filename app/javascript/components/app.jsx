@@ -57,10 +57,10 @@ export default class App extends React.Component{
             desc2 = 'Wishing you many happy returns';
             // desc3 = '';
           } else if (occ === 'graduation') {
-            toName = 'Class of SEI 19,';
+            toName = 'Hey, Class,';
             fromName = 'All the best, Friend';
-            desc1 = 'Happy Graduation!';
-            desc2 = 'You have a bright future ahead of you';
+            desc1 = "Happy Graduation y'all !";
+            desc2 = 'Thanks for the memories and the good times.';
             // desc3 = '';
           } else if (occ === 'farewell') {
             toName = 'My dear friend,';
