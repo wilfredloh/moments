@@ -1,67 +1,112 @@
-<p id="notice"><%= notice %></p>
-
 <% if @moment === nil %>
 	<p>No such thing bruh </p>
 	<% controller.redirect_to '/' %>
 
+
+
 <% elsif @moment.occasion === 'birthday' %>
-	<p>
-	<strong>ID:</strong>
-	<%= @moment.id %>
-	</p>
-
-	<p>
-	<strong>Title:</strong>
-	<%= @moment.title %>
-	</p>
-
-	<p>
-	<strong>To name:</strong>
-	<%= @moment.to_name %>
-	</p>
-
-	<p>
-	<strong>From name:</strong>
-	<%= @moment.from_name %>
-	</p>
-
-	<p>
-	<strong>Description:</strong>
-	<%= @moment.description %>
-	</p>
-
-	<p>
-	<strong>Image url:</strong>
-	<%= @moment.image_url %>
-	</p>
-
-	<p>
-	<strong>Audio url:</strong>
-	<%= @moment.audio_url %>
-	</p> 
-
-	<br/>
-	<%= link_to 'Edit', edit_moment_path(@moment) %> |
-	<%= link_to 'Back', moments_path %>
-
+	
 	<div class="card">
 		<div class="imgBox">
 			<div class="bark"></div>
 			<img src="https://image.ibb.co/fYzTrb/lastofus.jpg">
 		</div>
 		<div class="details">
-			<h4 class="color1"><%= @moment.title %></h2>
-			<h4 class="color2 margin">HAPPY BIRTHDAY!</h3>
-			<p>Dear <%= @moment.to_name %>,</p>
-			<p>Wishing you many happy returns!</p>
-			<p class="text-right">Happy Birthday, <%= @moment.to_name %>!</p>
+			<h4 class="color1"><%= @moment.to_name %></h2>
+			<h4 class="color2 margin"><%= @moment.description %></h3>
+			<p> <%= @moment.description2 %>,</p>
 			<p class="text-right">♥<%= @moment.from_name %></p>
 		</div>
 	</div>
 
-<% elsif @moment.occasion === 'graduation' %>
-	<p> Graddddd</p>
-<% elsif @moment.occasion === 'farewell' %>
-	<p> GOODBYE </p>
-<% end %>
 
+
+
+
+<% elsif @moment.occasion === 'graduation' %>
+
+	<div class="book">
+		<h1><%= @moment.to_name %></h1>
+		<span class="page turn"></span>
+		<span class="page turn"></span>
+		<span class="page turn"></span>
+
+		<span class="page turn">
+		
+			<p><%= @moment.description %></p>
+			<p><%= @moment.description2 %></p>
+			<p><%= @moment.from_name %></p>
+		</span>
+
+		<span class="page turn"></span>
+		<span class="page turn"></span>
+		<span class="cover"></span>
+		<span class="page"></span>
+		<span class="cover turn"></span>
+	</div>
+
+
+
+<% elsif @moment.occasion === 'farewell' %>
+	
+	<div class="box">
+
+		<div>
+			<h1> <%= @moment.to_name %> </h1>
+		</div>
+
+		<div id="card-container">
+			<div id="card">
+			<div class="front face">
+				<img src="https://images.unsplash.com/photo-1529268209110-62be1d87fe75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"/>
+			</div>
+			<div class="back face">
+				<h1>Bouquet</h1>
+				<p class="artist"> <%= @moment.description %> </p>
+				<p class="date">2015</p>
+			</div>
+			</div>
+		</div>
+
+		<div id="card-container">
+			<div id="card2">
+			<div class="front face">
+				<img src="https://images.unsplash.com/photo-1471981172431-b1c4155be4b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"/>
+			</div>
+			<div class="back face">
+				<h1>Roses</h1>
+				<p class="artist"><%= @moment.description2 %></p>
+				<p class="date">2017</p>
+			</div>
+			</div>
+		</div>
+
+		<div id="card-container">
+			<div id="card3">
+			<div class="front face">
+				<img src="https://images.unsplash.com/photo-1521401592658-a19e45c75c2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"/>
+			</div>
+			<div class="back face">
+				<h1>Waterbed</h1>
+				<p class="artist">Place audio / image here</p>
+				<p class="date">2015</p>
+			</div>
+			</div>
+		</div>
+
+		<div id="card-container">
+			<div id="card3">
+			<div class="front face">
+				<img src="https://images.unsplash.com/photo-1519692958672-ee66611a9f40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"/>
+			</div>
+			<div class="back face">
+				<h1>Waterbed</h1>
+				<p class="artist"><%= @moment.from_name %></p>
+				<p class="date">2015</p>
+			</div>
+			</div>
+		</div>
+
+	</div>
+
+<% end %>
