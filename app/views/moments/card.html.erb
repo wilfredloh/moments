@@ -6,18 +6,11 @@
 
 <% elsif @moment.occasion === 'birthday' %>
 	
-	<embed src="/audio/wait.mp3" autostart="true" loop="true" hidden="true" id="my_audio"><embed>
-	<script type="text/javascript">
-		window.onload=function(){
-			console.log('this is for audio')
-			document.getElementById("my_audio").play();
-		}
-	</script>
-
-	<img src="/images/card.png">
-	<p>correct page</p>
-
-
+	<iframe src="/assets/bday.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+	
+	<audio id="player" autoplay loop>
+		<source src="/assets/bday.mp3" type="audio/mp3">
+	</audio>
 
 	<div class="card">
 		<div class="imgBox">
@@ -34,9 +27,13 @@
 
 
 
-
-
 <% elsif @moment.occasion === 'graduation' %>
+
+	<iframe src="/assets/grad.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+	
+	<audio id="player" autoplay loop>
+		<source src="/assets/grad.mp3" type="audio/mp3">
+	</audio>
 
 	<div class="book">
 		<h1><%= @moment.to_name %></h1>
@@ -45,7 +42,6 @@
 		<span class="page turn"></span>
 
 		<span class="page turn">
-		
 			<p><%= @moment.description %></p>
 			<p><%= @moment.description2 %></p>
 			<p><%= @moment.from_name %></p>
@@ -61,6 +57,12 @@
 
 
 <% elsif @moment.occasion === 'farewell' %>
+
+	<iframe src="/assets/fare.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+	
+	<audio id="player" autoplay loop>
+		<source src="/assets/fare.mp3" type="audio/mp3">
+	</audio>
 	
 	<div class="box">
 
