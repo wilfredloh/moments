@@ -40,6 +40,7 @@ class MomentsController < ApplicationController
   # POST /moments
   # POST /moments.json
   def create
+    p params
     if params[:occasion] == 'birthday'
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
       p params[:occasion]

@@ -11,8 +11,8 @@
 */
 
 .vertical-nav {
-    min-width: 17rem;
-    width: 17rem;
+    min-width: 16rem;
+    width: 16rem;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -83,5 +83,13 @@
   
   .text-gray {
     color: #aaa;
+  }
+
+  .nav-item {
+    font-size: 1.05rem;
+  }
+
+  .nav-item a {
+    margin-bottom: 3rem;
   }
   

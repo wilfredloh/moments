@@ -6,6 +6,19 @@
 
 <% elsif @moment.occasion === 'birthday' %>
 	
+	<embed src="/audio/wait.mp3" autostart="true" loop="true" hidden="true" id="my_audio"><embed>
+	<script type="text/javascript">
+		window.onload=function(){
+			console.log('this is for audio')
+			document.getElementById("my_audio").play();
+		}
+	</script>
+
+	<img src="/images/card.png">
+	<p>correct page</p>
+
+
+
 	<div class="card">
 		<div class="imgBox">
 			<div class="bark"></div>

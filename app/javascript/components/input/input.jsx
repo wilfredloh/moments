@@ -54,9 +54,8 @@ export default class Input extends React.Component{
             
             <div>  
                 <p>Attachment</p>
-                <form encType="multipart/form-data" action="/" method="POST">
+                <form encType="multipart/form-data">
                     <input type="file" name="myFile"/>
-                    <input type="submit" className="btn btn-primary"/>
                 </form>
             </div>
 
@@ -69,7 +68,7 @@ export default class Input extends React.Component{
                 </div>
             </div> */}
 
-            <button onClick={ ()=> {onFormSave()}} className="btn btn-light my-4">Save Changes</button>
+            <button onClick={ ()=> {onFormSave()}} className="btn btn-secondary my-3">Save Changes</button>
             <button onClick={()=> {onDownload()}} className="btn btn-info mr-3">Download</button>
             <div className="btn-group dropup">
                 <button className="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -81,7 +80,7 @@ export default class Input extends React.Component{
                     <a className="dropdown-item" href="#">Facebook</a>
                 </div>
             </div>
-            <button onClick={()=> {onFormDelete()}} className="btn btn-danger mr-3 my-4">Delete</button>
+            <button onClick={()=> {onFormDelete()}} className="btn btn-danger mr-3 my-3">Delete</button>
         </div>
     );
   }

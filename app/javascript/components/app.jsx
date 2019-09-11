@@ -116,6 +116,7 @@ export default class App extends React.Component{
     //   this.state.moment.description3 = input
     //   this.setState({ moment: this.state.moment})
     // }
+      
     handleFormUpdate = () => {
       var reactThis = this;
       var responseHandler = () => {
@@ -147,7 +148,6 @@ export default class App extends React.Component{
     }
 
     downloadImage = () => {
-      console.log ('download image')
       let node = document.getElementById('cardDownload');
       htmlToImage.toPng(node)
       .then(function (dataUrl) {
@@ -214,7 +214,6 @@ export default class App extends React.Component{
       output = <OutputFw
         moment={this.state.moment}
       />
-
     }
 
     // ############################################################

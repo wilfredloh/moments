@@ -2,13 +2,16 @@
 <!-- Vertical navbar -->
 <div class="vertical-nav bg-white" id="sidebar">
   <div class="py-4 px-3 mb-4 bg-light">
-    <div class="media d-flex align-items-center"><img src="https://ichef.bbci.co.uk/news/624/cpsprodpb/503C/production/_104304502_be53e1b5-279a-460d-963a-b70c8025926f.jpg" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+    <div class="media d-flex align-items-center"><img src="https://ichef.bbci.co.uk/news/624/cpsprodpb/503C/production/_104304502_be53e1b5-279a-460d-963a-b70c8025926f.jpg" alt="..." width="100px" height="75px" class="mr-3 rounded-circle img-thumbnail shadow-sm">
       <div class="media-body">
         <h4 class="m-0">
           <%=current_user.email.split('@')[0].capitalize %>
         </h4>
-        <br/>
-        <p class="font-weight-light text-muted mb-0">Add pic here</p>
+        <%
+=begin%>
+ <p class="font-weight-light text-muted mb-0">Add pic here</p> 
+<%
+=end%>
       </div>
     </div>
   </div>
@@ -16,26 +19,20 @@
   <ul class="nav flex-column bg-white mb-0">
     <li class="nav-item">
       <a href="/" class="nav-link text-dark font-italic bg-light">
-                <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
-                Home
-            </a>
+          Home
+      </a>
     </li>
     <li class="nav-item">
-      <a href="/moments" class="nav-link text-dark font-italic">
-          <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+      <a href="/moments" class="nav-link text-dark font-italic bg-light">
           All Your Designs
       </a> 
 
     </li>
     
     <li class="nav-item">
-      <%= link_to 'Sign out', destroy_user_session_url, method: :delete, class: 'text-gray font-weight-bold text-uppercase px-3 small mb-0' %>
+      <%= link_to 'Sign out', destroy_user_session_url, method: :delete, class: 'nav-link text-dark font-italic bg-light px-3' %>
     </li>
   </ul>
-
-  <p>
-    User ID:<%= current_user.id %>
-  </p>
 
 </div>
 <!-- End vertical navbar -->

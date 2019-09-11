@@ -71,8 +71,6 @@ body * {
     font-family: 'Montserrat', sans-serif;
 }
 
-
-
 .reactContainer {
     display: flex;
     flex-direction: column;
@@ -98,6 +96,12 @@ body * {
 .reactInput input,
 .reactInput textarea {
     font-size: 0.85rem;
+}
+
+.reactInput p {
+    padding: 0;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
 }
 
 
