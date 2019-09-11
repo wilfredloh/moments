@@ -15,6 +15,7 @@ class MomentsController < ApplicationController
   # GET /moments/1.json
   
   def show
+    redirect_to root_path
   end
 
   def card

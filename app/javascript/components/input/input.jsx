@@ -16,6 +16,7 @@ export default class Input extends React.Component{
         onDesc2Change,
         // onDesc3Change,
         onFormSave,
+        onFormDelete,
         onExport,
         onDownload,
         onFormLeave,
@@ -80,6 +81,7 @@ export default class Input extends React.Component{
                     <a className="dropdown-item" href="#">Facebook</a>
                 </div>
             </div>
+            <button onClick={()=> {onFormDelete()}} className="btn btn-danger mr-3 my-4">Delete</button>
         </div>
     );
   }

@@ -129,12 +129,21 @@ export default class App extends React.Component{
       };
       var request = new XMLHttpRequest();
       request.addEventListener("load", responseHandler);
-      console.log('reacttttt stattteeeeee')
-      console.log(reactThis.state)
       let jsonObject = JSON.stringify(reactThis.state.moment);
       request.open("PATCH", `http://localhost:3000/moments/${this.state.id}`);
       request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       request.send(jsonObject);
+    }
+
+    handleFormDelete = () => {
+      var responseHandler = () => {
+        window.location.replace("/");
+      };
+      var request = new XMLHttpRequest();
+      request.addEventListener("load", responseHandler);
+      request.open("DELETE", `http://localhost:3000/moments/${this.state.id}`);
+      request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      request.send();
     }
 
     downloadImage = () => {
@@ -184,6 +193,7 @@ export default class App extends React.Component{
       onDesc2Change={this.handleInputDesc2}
       // onDesc3Change={this.handleInputDesc3}
       onFormSave={this.handleFormUpdate}
+      onFormDelete={this.handleFormDelete}
       onExport={this.exportImage}
       onDownload={this.downloadImage}
       onFormLeave={this.handleFormUpdate}
