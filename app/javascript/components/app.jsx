@@ -131,7 +131,7 @@ export default class App extends React.Component{
       var request = new XMLHttpRequest();
       request.addEventListener("load", responseHandler);
       let jsonObject = JSON.stringify(reactThis.state.moment);
-      request.open("PATCH", `http://localhost:3000/moments/${this.state.id}`);
+      request.open("PATCH", `/moments/${this.state.id}`);
       request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       request.send(jsonObject);
     }
@@ -142,7 +142,7 @@ export default class App extends React.Component{
       };
       var request = new XMLHttpRequest();
       request.addEventListener("load", responseHandler);
-      request.open("DELETE", `http://localhost:3000/moments/${this.state.id}`);
+      request.open("DELETE", `/moments/${this.state.id}`);
       request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
       request.send();
     }
@@ -174,7 +174,7 @@ export default class App extends React.Component{
   // ############################################################
 
   render(){
-    let url = `http://localhost:3000/m/${this.state.card}`;
+    let url = `/m/${this.state.card}`;
     let occ = this.state.occasion;
 
     console.log ('before rendering')
