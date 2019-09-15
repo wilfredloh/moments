@@ -1,7 +1,7 @@
 # Moments
 https://momentscards.herokuapp.com/
 
-# Problem Statement
+# Problem Statement / App direction
   - This app was designed for people to easily create digital, animated cards without spending alot of time worrying about the design or features of the card.
   - This app allows users to edit details like the sender and receipient names, customize a personal message and send a shareable, secure link to others to see without having to login.
   - The goal of this app is to encourage people to send memorable yet meaningful digital cards to others without much hassle, while saving money, time and the environment in the process.
@@ -21,6 +21,12 @@ https://momentscards.herokuapp.com/
 - Soft launch + more feedback
 - Final wrap-up/clean-up and deploying to Heroku
 
+# What I learnt
+- Planning is crucial, so try to start earlier to have more time coding the actual app
+- Prioritizing features is important, it is impossible to complete all features
+- Trying to implement clean code principles (DRY and KISS) given the short amount of time needed to code
+- An app's aesthetics are important to help capture and solidify a good first impression
+
 # Installation instructions for any dependencies
 - Install Ruby & Rails (latest versions)
 - Install Postgres Database
@@ -31,5 +37,5 @@ https://momentscards.herokuapp.com/
 - Run "rails server" to start
 - Run "./bin/webpack-dev-server" to enable React autorefresh
 
-# Wireframes
+# Wireframe
 ![alt_text](https://github.com/wilfredloh/moments/blob/master/wireframe.png)
