@@ -32,4 +32,4 @@ https://momentscards.herokuapp.com/
 - Run "./bin/webpack-dev-server" to enable React autorefresh
 
 # Wireframes
-![alt_text](https://www.dropbox.com/s/17mjral7t24p1tv/wireframe.png?dl=0)
+![alt_text](https://github.com/wilfredloh/moments/blob/master/wireframe.png)
