@@ -10,6 +10,7 @@ https://momentscards.herokuapp.com/
   - Technologies: HTML/CSS, CSS Animations, Ruby, Sass & Bootstrap
   - Database & Hosting: Postgres, Heroku
   - Frameworks: React.js, Ruby on Rails
+  - Other: AJAX, Editor-like interface, Hashing URLs for privacy/security
 
 # General Approach
 - Project start: 7 days to create an app
