@@ -16,6 +16,35 @@ body * {
 
 // ###########################################################
 // HOME PAGE
+.home-content h3 {
+    font-weight: bold;
+    color: black;
+    font-size: 2rem;
+}
+
+.home-content p {
+    margin: 1.3rem 0;
+    font-size: 1rem;
+}
+
+#home {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.content {
+    height: 80vh;
+    padding: 0 1rem;
+}
+
+aside {
+    background-size: cover;
+    background-image: url("laptop.jpeg");
+    border-radius: 2rem;
+    margin: 0 2rem;
+}
 // ###########################################################
 // lp = landing page
 
