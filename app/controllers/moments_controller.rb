@@ -7,7 +7,8 @@ class MomentsController < ApplicationController
   # GET /moments
   # GET /moments.json
   def index
-    @moments = Moment.all.sort_by{|m| m.updated_at}.reverse
+    moments = Moment.all.where(user_id: current_user)
+    @moments = moments.sort_by{|m| m.updated_at}.reverse
     render layout: "navbarHome"
   end
 
