@@ -38,5 +38,11 @@ https://momentscards.herokuapp.com/
 - Run "rails server" to start
 - Run "./bin/webpack-dev-server" to enable React autorefresh
 
+# Heroku reset
+- Step 1: heroku restart
+- Step 2: heroku pg:reset DATABASE (no need to change the DATABASE)
+- Step 3: heroku run rake db:migrate
+- Step 4: heroku run rake db:seed (if you have seed)
+
 # Wireframe
 ![alt_text](https://github.com/wilfredloh/moments/blob/master/wireframe.png)
