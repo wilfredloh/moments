@@ -55,7 +55,7 @@ class MomentsController < ApplicationController
       p '#######$$$$$$$%%%%%%%%$$$$$$######&&&&&&&&@@@@@@&&#&$&&@&'
     end
 
-    @moment = Moment.new(title:"", to_name:"", from_name:"", occasion: params[:occasion], description3: params[:description])
+    @moment = Moment.new(title:"", to_name:"", from_name:"", occasion: params[:occasion], description3: params[:description], user: current_user)
     @moment.save
 
     respond_to do |format|
@@ -112,13 +112,20 @@ class MomentsController < ApplicationController
     def set_moment
       p'PARMARMMSMDMMSDMSMDMD'
       p params
-      moments = Moment.all.where(user_id: current_user)
-
-      if moments.length == 0
-        redirect_to root_path
+      # moments = Moment.all.where(user_id: current_user)
+      @moment = Moment.find(params[:id])
+      # p @moment.user_id;
+      if @moment.user_id == current_user.id
+        p 'NANIIIIIIIIIIIII'
+        p @moment
       else 
-        @moment = moments.find(params[:id])
+        redirect_to root_path
       end
+      # if .length == 0
+      #   redirect_to root_path
+      # else 
+        
+      # end
 
     end
 
