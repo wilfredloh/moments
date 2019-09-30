@@ -35,7 +35,6 @@ class MomentsController < ApplicationController
   # GET /moments/1/edit
   def edit
     @moment = set_moment
-
   end
 
   # POST /moments
@@ -113,11 +112,13 @@ class MomentsController < ApplicationController
     def set_moment
       p'PARMARMMSMDMMSDMSMDMD'
       p params
-      @moment = Moment.find(params[:id])
+      moments = Moment.all.where(user_id: current_user)
 
-      
-      # @moment = Moment.where(audio_url: params[:hash])[0]
-      # p @moment
+      if moments.length == 0
+        redirect_to root_path
+      else 
+        @moment = moments.find(params[:id])
+      end
 
     end
 
